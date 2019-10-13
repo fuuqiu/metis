@@ -1,0 +1,789 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Fuuqiu  云开平台开发文档">
+      
+      
+      
+        <meta name="author" content="Fuuqiu@163.com">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>AI智能图示例 - AI+ 云开平台开发文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#ai" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="AI+ 云开平台开发文档" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              AI+ 云开平台开发文档
+            </span>
+            <span class="md-header-nav__topic">
+              
+                AI智能图示例
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/fuuqiu/metis/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="AI+ 云开平台开发文档" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    AI+ 云开平台开发文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/fuuqiu/metis/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="AI+™ 产品介绍" class="md-nav__link">
+      AI+™ 产品介绍
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../AI智能图样例/" title="AI智能图样例" class="md-nav__link">
+      AI智能图样例
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        AI智能图示例
+      </label>
+    
+    <a href="./" title="AI智能图示例" class="md-nav__link md-nav__link--active">
+      AI智能图示例
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="原料图说明:" class="md-nav__link">
+    原料图说明:
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" title="1、日光图" class="md-nav__link">
+    1、日光图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" title="2、极化图" class="md-nav__link">
+    2、极化图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" title="3.纹理图" class="md-nav__link">
+    3.纹理图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4uv" title="4、UV图" class="md-nav__link">
+    4、UV图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" title="5、伍氏图" class="md-nav__link">
+    5、伍氏图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" title="6、老化图" class="md-nav__link">
+    6、老化图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" title="7、敏感图" class="md-nav__link">
+    7、敏感图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" title="8、棕色图" class="md-nav__link">
+    8、棕色图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" title="9、趋势图" class="md-nav__link">
+    9、趋势图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10" title="10、黑白图" class="md-nav__link">
+    10、黑白图
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../AI智能设备/" title="AI智能设备介绍" class="md-nav__link">
+      AI智能设备介绍
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../AI检测数据/" title="AI智能检测数据" class="md-nav__link">
+      AI智能检测数据
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      SDK开发文档
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        SDK开发文档
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SDK开发文档/全局异常信息/" title="全局异常信息" class="md-nav__link">
+      全局异常信息
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+    
+    <label class="md-nav__link" for="nav-6-2">
+      DJM 接口
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        DJM 接口
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SDK开发文档/DJM 接口/1.配置/" title="配置" class="md-nav__link">
+      配置
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SDK开发文档/DJM 接口/2.接口调用说明/" title="接口调用说明" class="md-nav__link">
+      接口调用说明
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+    
+    <label class="md-nav__link" for="nav-6-3">
+      Objective C SDK
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        Objective C SDK
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SDK开发文档/Objective-C SDK/01.配置/" title="SDK配置说明" class="md-nav__link">
+      SDK配置说明
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SDK开发文档/Objective-C SDK/02.接口调用/" title="02.接口调用" class="md-nav__link">
+      02.接口调用
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="原料图说明:" class="md-nav__link">
+    原料图说明:
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" title="1、日光图" class="md-nav__link">
+    1、日光图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" title="2、极化图" class="md-nav__link">
+    2、极化图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" title="3.纹理图" class="md-nav__link">
+    3.纹理图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4uv" title="4、UV图" class="md-nav__link">
+    4、UV图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" title="5、伍氏图" class="md-nav__link">
+    5、伍氏图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" title="6、老化图" class="md-nav__link">
+    6、老化图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" title="7、敏感图" class="md-nav__link">
+    7、敏感图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" title="8、棕色图" class="md-nav__link">
+    8、棕色图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" title="9、趋势图" class="md-nav__link">
+    9、趋势图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10" title="10、黑白图" class="md-nav__link">
+    10、黑白图
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/fuuqiu/metis/edit/master/docs/AI智能图说明.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="ai">AI智能图示例</h1>
+<p>MetisAI+ 图原料和智能生产AI图示例</p>
+<table>
+<thead>
+<tr>
+<th align="left">原料图</th>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">日光图</td>
+<td align="left">极化图</td>
+<td align="left">纹理涂</td>
+</tr>
+<tr>
+<td align="left">UV图</td>
+<td align="left">伍氏图</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_1"></h4>
+<table>
+<thead>
+<tr>
+<th align="left">AI智能图</th>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">日光图</td>
+<td align="left">敏感图</td>
+<td align="left">棕色图</td>
+</tr>
+<tr>
+<td align="left">趋势图</td>
+<td align="left">黑白图</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_2"></h4>
+<h3 id="_3">原料图说明:</h3>
+<h5 id="1">1、日光图</h5>
+<p>从各个方向向面部照射柔和的散射光线,均匀照亮面部的所有细节,不会产生阴影,也不会突出皮肤不同层面的特殊问题。为综合评价面部皮肤提供客观和直观的影像基础。</p>
+<h5 id="2">2、极化图</h5>
+<p>我们通常因皮肤表面的较强直接反射光而无法清晰地观察皮肤表皮下方。在极化模式中采用用特殊的极化镜组,可有效地减弱直接反射光,使得我们能够观察到表皮下方的肤色不均和亮泽皮肤下隐藏的微血管结构。在极化模式下,老化的皮肤可能更透明显露出皮肤表皮下方的不规则的皮肤特征。</p>
+<h5 id="3">3.纹理图</h5>
+<p>通过独特拍摄光线,可加强皮肤表面纹理的可见性。此拍摄模式与极化图的拍摄模式正相反,在这种模式下,拍摄镜组降低皮肤表层下方的隐藏的皮肤特征的可见性,加强表面光学反射,展示表面纹理细节、毛孔结构和初现的细纹</p>
+<h5 id="4uv">4、UV图</h5>
+<p>在特定光线下, 可向面部皮肤照射少量无害紫外光线，这些不可见光线可穿透肌肤表层。在皮肤表面下方,细胞和组织具有将这些不可见光线转化成可见荧光的天然功能,从而有效地让皮肤变成发光体。因为光线产自皮肤内,而不是通常的反射光,这样就可以清晰观察到皮肤表面下隐藏的皮肤问题。</p>
+<h5 id="5">5、伍氏图</h5>
+<p>借助拍摄灯光谱线可看到活性皮脂腺和油膜分布,同时可观察到皮脂腺周围的发炎活动的强度和深度,尤其适合辨识黄褐斑</p>
+<h5 id="6">6、老化图</h5>
+<p>皮肤由于生理老化和光损伤会导致出现肤色不均的现象,不同于出生时先天的均匀肤色,面部各区域会出现局部色素沉积肤色也会发生变化。生理老化图重点反映肤色和色素沉着中的细微差别,从而使得肤色不均匀对年龄的影响比皱纹、肌肤下垂等表面老化迹象更好识别。</p>
+<h5 id="7">7、敏感图</h5>
+<p>健康肌肤为粉白色,由于炎症、长痘、挤压、等原因导致皮肤底层出现局部点状红色症状,需要通过治疗改善;日光照射、过敏、运动后的血液循环等原因导致的全脸大面积红则随着时间和循环减慢会自动消失;两种情况出现的反应完全不同。</p>
+<h5 id="8">8、棕色图</h5>
+<p>棕色图,可以清楚的看到黑色素分布情况通过黑色素分析可分析到斑的类型(黄褐斑、褐青色痣、老年斑等)，皮肤底层有没有隐藏的色素有没有做过斑的治疗, 是什么样的治疗(产品换肤,光类治疗等)。</p>
+<h5 id="9">9、趋势图</h5>
+<p>设备根据皮肤基础状态,结合前几种模式面部分析数据, DJM云端计算机能够精准的计算出面部未来斑的分布和状态,更早一步的了解斑的发展趋势。</p>
+<h5 id="10">10、黑白图</h5>
+<p>黑白图,可以清晰的看到客户面部日晒型色斑趋势;光老化趋势;及毛孔垃圾分布,可根据检测结果做对应皮肤问题的预防措施。</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../AI智能图样例/" title="AI智能图样例" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                AI智能图样例
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../AI智能设备/" title="AI智能设备介绍" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                AI智能设备介绍
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Email:Fuuqiu@163.com </br> 支持提供优化方案
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

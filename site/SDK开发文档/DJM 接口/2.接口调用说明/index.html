@@ -1,0 +1,1438 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Fuuqiu  云开平台开发文档">
+      
+      
+      
+        <meta name="author" content="Fuuqiu@163.com">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>接口调用说明 - AI+ 云开平台开发文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="AI+ 云开平台开发文档" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              AI+ 云开平台开发文档
+            </span>
+            <span class="md-header-nav__topic">
+              
+                接口调用说明
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/fuuqiu/metis/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="AI+ 云开平台开发文档" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    AI+ 云开平台开发文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/fuuqiu/metis/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="AI+™ 产品介绍" class="md-nav__link">
+      AI+™ 产品介绍
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../AI智能图样例/" title="AI智能图样例" class="md-nav__link">
+      AI智能图样例
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../AI智能图说明/" title="AI智能图示例" class="md-nav__link">
+      AI智能图示例
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../AI智能设备/" title="AI智能设备介绍" class="md-nav__link">
+      AI智能设备介绍
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../AI检测数据/" title="AI智能检测数据" class="md-nav__link">
+      AI智能检测数据
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      SDK开发文档
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        SDK开发文档
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../全局异常信息/" title="全局异常信息" class="md-nav__link">
+      全局异常信息
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2" checked>
+    
+    <label class="md-nav__link" for="nav-6-2">
+      DJM 接口
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        DJM 接口
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../1.配置/" title="配置" class="md-nav__link">
+      配置
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        接口调用说明
+      </label>
+    
+    <a href="./" title="接口调用说明" class="md-nav__link md-nav__link--active">
+      接口调用说明
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api" title="账户登录校验API" class="md-nav__link">
+    账户登录校验API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="字段说明" class="md-nav__link">
+    字段说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="请求示例" class="md-nav__link">
+    请求示例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api_1" title="用户数据协同API" class="md-nav__link">
+    用户数据协同API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="字段说明" class="md-nav__link">
+    字段说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="请求示例" class="md-nav__link">
+    请求示例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api_2" title="案例组数据协同API" class="md-nav__link">
+    案例组数据协同API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="字段说明" class="md-nav__link">
+    字段说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="参数备注:" class="md-nav__link">
+    参数备注:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="接口备注:" class="md-nav__link">
+    接口备注:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="请求示例" class="md-nav__link">
+    请求示例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api_3" title="案例图数据项协同API" class="md-nav__link">
+    案例图数据项协同API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="检测报告字段说明" class="md-nav__link">
+    检测报告字段说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai" title="AI检测报告参数备注:" class="md-nav__link">
+    AI检测报告参数备注:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="检测结果字段说明" class="md-nav__link">
+    检测结果字段说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="数据项请求示例" class="md-nav__link">
+    数据项请求示例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+    
+    <label class="md-nav__link" for="nav-6-3">
+      Objective C SDK
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        Objective C SDK
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Objective-C SDK/01.配置/" title="SDK配置说明" class="md-nav__link">
+      SDK配置说明
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Objective-C SDK/02.接口调用/" title="02.接口调用" class="md-nav__link">
+      02.接口调用
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api" title="账户登录校验API" class="md-nav__link">
+    账户登录校验API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="字段说明" class="md-nav__link">
+    字段说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="请求示例" class="md-nav__link">
+    请求示例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api_1" title="用户数据协同API" class="md-nav__link">
+    用户数据协同API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="字段说明" class="md-nav__link">
+    字段说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="请求示例" class="md-nav__link">
+    请求示例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api_2" title="案例组数据协同API" class="md-nav__link">
+    案例组数据协同API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="字段说明" class="md-nav__link">
+    字段说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="参数备注:" class="md-nav__link">
+    参数备注:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="接口备注:" class="md-nav__link">
+    接口备注:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="请求示例" class="md-nav__link">
+    请求示例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api_3" title="案例图数据项协同API" class="md-nav__link">
+    案例图数据项协同API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="检测报告字段说明" class="md-nav__link">
+    检测报告字段说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai" title="AI检测报告参数备注:" class="md-nav__link">
+    AI检测报告参数备注:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="检测结果字段说明" class="md-nav__link">
+    检测结果字段说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="数据项请求示例" class="md-nav__link">
+    数据项请求示例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/fuuqiu/metis/edit/master/docs/SDK开发文档/DJM 接口/2.接口调用说明.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="_1">接口调用说明</h1>
+<h2 id="api">账户登录校验API</h2>
+<h3 id="_2">字段说明</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+<th>必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account</td>
+<td>String</td>
+<td>账号</td>
+<td>是</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>String</td>
+<td>密码(明文)</td>
+<td>是</td>
+</tr>
+<tr>
+<td>deviceId</td>
+<td>String</td>
+<td>设备编号(预留字段)</td>
+<td>否</td>
+</tr>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>true 成功|false 失败</td>
+<td>是</td>
+</tr>
+<tr>
+<td>shopname</td>
+<td>String</td>
+<td>第三方系统中店铺名称</td>
+<td>否</td>
+</tr>
+<tr>
+<td>telephone</td>
+<td>String</td>
+<td>第三方系统中店铺联系电话</td>
+<td>否</td>
+</tr>
+<tr>
+<td>address</td>
+<td>String</td>
+<td>第三方系统中店铺地址</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">请求示例</h3>
+<pre><code class="http">POST /user/login HTTP/1.1
+Host: http://www.metis.hoyar.com.cn
+Content-Type: application/json
+Request Body:
+{
+    &quot;account&quot;:&quot;test&quot;,
+    &quot;pwd&quot;:&quot;123456&quot;,
+    &quot;deviceId&quot;:&quot;CDEC4B94C1E2&quot;
+}
+Response Code:200
+Response Body:
+{
+    &quot;success&quot;:true,
+    &quot;result&quot;:
+    {
+      &quot;shopname&quot;:&quot;店铺名称&quot;,
+      &quot;telephone&quot;:&quot;店铺联系电话&quot;,
+      &quot;address&quot;:&quot;店铺地址&quot;,
+    }
+}
+</code></pre>
+
+<h2 id="api_1">用户数据协同API</h2>
+<h3 id="_4">字段说明</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+<th>必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shopAccount</td>
+<td>String</td>
+<td>该顾客所属门店的账号</td>
+<td>是</td>
+</tr>
+<tr>
+<td>customerName</td>
+<td>String</td>
+<td>顾客姓名</td>
+<td>是</td>
+</tr>
+<tr>
+<td>customerFlag</td>
+<td>String</td>
+<td>顾客编号(在全脸中唯一)</td>
+<td>是</td>
+</tr>
+<tr>
+<td>sex</td>
+<td>String</td>
+<td>性别</td>
+<td>否</td>
+</tr>
+<tr>
+<td>age</td>
+<td>String</td>
+<td>年龄</td>
+<td>否</td>
+</tr>
+<tr>
+<td>birthday</td>
+<td>String</td>
+<td>生日</td>
+<td>否</td>
+</tr>
+<tr>
+<td>telphone</td>
+<td>String</td>
+<td>电话</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">请求示例</h3>
+<pre><code class="http">POST /user/add HTTP/1.1
+Host: http://www.metis.hoyar.com.cn
+Content-Type: application/json
+Request Body:
+{
+    &quot;shopAccount&quot;: &quot;test&quot;,
+    &quot;customerName&quot;: &quot;test metis&quot;,
+    &quot;customerFlag&quot;:&quot;16130&quot;,
+    &quot;sex&quot;: &quot;男&quot;,
+    &quot;age&quot;: &quot;18&quot;,
+    &quot;birthday&quot;: &quot;2018-03-27&quot;,
+    &quot;telphone&quot;: &quot;18888888888&quot;
+}
+
+Response Code:200
+</code></pre>
+
+<h2 id="api_2">案例组数据协同API</h2>
+<h3 id="_6">字段说明</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+<th>必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>imgUrl</td>
+<td>String</td>
+<td>诊断图片路径</td>
+<td>是</td>
+</tr>
+<tr>
+<td>itype</td>
+<td>String</td>
+<td>图片的诊断类型</td>
+<td>是</td>
+</tr>
+<tr>
+<td>customerFlag</td>
+<td>String</td>
+<td>图片所属顾客编号</td>
+<td>是</td>
+</tr>
+<tr>
+<td>imgGroupFlag</td>
+<td>String</td>
+<td>图片所属分组编号</td>
+<td>是</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String</td>
+<td>图片所属顾客电话(全脸顾客)</td>
+<td>否</td>
+</tr>
+<tr>
+<td>deviceId</td>
+<td>String</td>
+<td>拍摄设备的编号(预留字段)</td>
+<td>否</td>
+</tr>
+<tr>
+<td>remark</td>
+<td>String</td>
+<td>图片备注</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">参数备注:</h3>
+<p>itype : 0-日光模式 1-交叉偏正模式 2-平行光模式 3-UV模式 4-Woods模式 5-生理老化 6-敏感图 7-棕色图 8-坐标图 9-斑的趋势图 10-AI诊断图 11-毛孔图 12-斑点图，13-皱纹图 14黑白图</p>
+<p>imgGroupFlag: 每张图片都有对应的分组号  多个图片对应一个分组  一般为14张图片为一组</p>
+<h3 id="_8">接口备注:</h3>
+<p>每次同步一张图片数据 分两个批次同步 批次之间时间间隔不等 如两个批次之间累计同步图片没有十四张 则五分钟后做最后一次尝试将未同步的图片补齐</p>
+<h3 id="_9">请求示例</h3>
+<pre><code class="http">POST /note/add HTTP/1.1
+Host: http://www.metis.hoyar.com.cn
+Content-Type: application/json
+Request Body:
+{
+    &quot;imgUrl&quot;:&quot;https://djm-skin.oss-cn-shenzhen.aliyuncs.com/Picture/68/293/503/6.jpg&quot;,
+    &quot;itype&quot;:&quot;6&quot;,
+    &quot;customerFlag&quot;:&quot;16130&quot;,
+    &quot;imgGroupFlag &quot;:&quot;1187&quot;,
+    &quot;phone&quot;:&quot;18718888888&quot;,
+    &quot;deviceId&quot;:&quot;CDEC4B94C1E2&quot;,
+    &quot;remark&quot;:&quot;顾客敏感图&quot;
+} 
+Response Code:200
+</code></pre>
+
+<h2 id="api_3">案例图数据项协同API</h2>
+<h3 id="_10">检测报告字段说明</h3>
+<table>
+<thead>
+<tr>
+<th>检测报告参数</th>
+<th>类型</th>
+<th>描述</th>
+<th>必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>skinAge</td>
+<td>String</td>
+<td>肤龄</td>
+<td>否</td>
+</tr>
+<tr>
+<td>stainScore</td>
+<td>String</td>
+<td>色斑程度 1-100</td>
+<td>否</td>
+</tr>
+<tr>
+<td>blackheadAcne</td>
+<td>String</td>
+<td>粉刺数量</td>
+<td>否</td>
+</tr>
+<tr>
+<td>poreNum</td>
+<td>String</td>
+<td>毛孔数量</td>
+<td>否</td>
+</tr>
+<tr>
+<td>wrinkleNum</td>
+<td>String</td>
+<td>皱纹数量</td>
+<td>否</td>
+</tr>
+<tr>
+<td>sensityArea</td>
+<td>String</td>
+<td>敏感面积  单位:像素</td>
+<td>否</td>
+</tr>
+<tr>
+<td>imgGroupFlag</td>
+<td>String</td>
+<td>数据项所属分组编号</td>
+<td>是</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String</td>
+<td>数据项所属顾客电话(全脸顾客)</td>
+<td>否</td>
+</tr>
+<tr>
+<td>deviceId</td>
+<td>String</td>
+<td>拍摄设备的编号(预留字段)</td>
+<td>否</td>
+</tr>
+<tr>
+<td>aiDiagnostic</td>
+<td>Object</td>
+<td>AI检测报告</td>
+<td>否</td>
+</tr>
+<tr>
+<td>comprehensiveSkinScore</td>
+<td>String</td>
+<td>皮肤综合得分 越高越好 取值范围(42-98)</td>
+<td>否</td>
+</tr>
+<tr>
+<td>aiPredictingDermatosis</td>
+<td>Object</td>
+<td>AI预测病症类型 单位(%)</td>
+<td>否</td>
+</tr>
+<tr>
+<td>dermatosisProportion</td>
+<td>Object</td>
+<td>皮肤病症 单位(%)</td>
+<td>否</td>
+</tr>
+<tr>
+<td>skinSymptomsSeverity</td>
+<td>Object</td>
+<td>皮肤病症严重程度 越高越差 取值范围(42-98)</td>
+<td>否</td>
+</tr>
+<tr>
+<td>nationalAverageScore</td>
+<td>Object</td>
+<td>病症在全国平均得分 取值范围(42-98)</td>
+<td>否</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>病症名称</td>
+<td>否</td>
+</tr>
+<tr>
+<td>chance</td>
+<td>String</td>
+<td>概率</td>
+<td>否</td>
+</tr>
+<tr>
+<td>prop</td>
+<td>String</td>
+<td>占比</td>
+<td>否</td>
+</tr>
+<tr>
+<td>predicted</td>
+<td>String</td>
+<td>程度</td>
+<td>否</td>
+</tr>
+<tr>
+<td>avg</td>
+<td>String</td>
+<td>平均</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ai">AI检测报告参数备注:</h3>
+<p>skinAge :皮肤年龄展示或解析来源 - 生理老化图 </p>
+<p>stainScore :色斑程度展示或解析来源 - 斑点图及斑的趋势图</p>
+<p>blackheadAcne :粉刺数量展示或解析来源 - 毛孔图</p>
+<p>poreNum :毛孔数量展示或解析来源 - 毛孔图</p>
+<p>wrinkleNum :皱纹数量展示或解析来源 - 皱纹图</p>
+<p>sensityArea :敏感面积展示或解析来源 - 敏感图</p>
+<p>aiDiagnostic :AI诊断报告数据来源由AI诊断图获取 除aiPredictingDermatosis(顾客皮肤情况不同 对象内元素个数不同)  其余参数对象内均有五个维度 </p>
+<p>comprehensiveSkinScore:皮肤综合得分由报告内的病症严重程度 AI预测病症类型等参数综合计算得出 病症程度越低得分越高</p>
+<p>aiPredictingDermatosis:AI对脸部皮肤可能出现的问题进行预估 仅作为参考 实际情况需要医生或技师判断</p>
+<p>dermatosisProportion:病症在顾客脸部皮肤多个问题中占比为多少 占比越低 皮肤状况越良好</p>
+<p>skinSymptomsSeverity: 皮肤病症严重程度 严重越高 病症在皮肤中越明显</p>
+<p>nationalAverageScore: 检测仪根据软件所在使用国 获取相应的数据计算得出平均分</p>
+<h3 id="_11">检测结果字段说明</h3>
+<table>
+<thead>
+<tr>
+<th>检测结果参数</th>
+<th>类型</th>
+<th>描述</th>
+<th>必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>detectionResult</td>
+<td>Object</td>
+<td>AI检测结果</td>
+<td>否</td>
+</tr>
+<tr>
+<td>totalPoints</td>
+<td>String</td>
+<td>皮肤综合得分 越高越好 取值范围(42-98)</td>
+<td>否</td>
+</tr>
+<tr>
+<td>poreNum</td>
+<td>String</td>
+<td>毛孔数量</td>
+<td>否</td>
+</tr>
+<tr>
+<td>acneCnt</td>
+<td>String</td>
+<td>粉刺数量</td>
+<td>否</td>
+</tr>
+<tr>
+<td>sensityareaRatio</td>
+<td>String</td>
+<td>敏感占比 单位%</td>
+<td>否</td>
+</tr>
+<tr>
+<td>wrinkleRatio</td>
+<td>String</td>
+<td>皱纹占比 单位%</td>
+<td>否</td>
+</tr>
+<tr>
+<td>spotsCount</td>
+<td>String</td>
+<td>色斑数量</td>
+<td>否</td>
+</tr>
+<tr>
+<td>wrinkleNum</td>
+<td>String</td>
+<td>皱纹数量</td>
+<td>否</td>
+</tr>
+<tr>
+<td>diseaseList</td>
+<td>Object</td>
+<td>AI预测病症类型</td>
+<td>否</td>
+</tr>
+<tr>
+<td>wrinklePercentage</td>
+<td>Object</td>
+<td>皱纹健康指数</td>
+<td>否</td>
+</tr>
+<tr>
+<td>spotsPercentage</td>
+<td>Object</td>
+<td>色斑健康指数</td>
+<td>否</td>
+</tr>
+<tr>
+<td>porePercentage</td>
+<td>Object</td>
+<td>毛孔健康指数</td>
+<td>否</td>
+</tr>
+<tr>
+<td>acnePercentage</td>
+<td>Object</td>
+<td>粉刺/黑头健康指数</td>
+<td>否</td>
+</tr>
+<tr>
+<td>sensityareaPercentage</td>
+<td>Object</td>
+<td>敏感健康指数</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+<p>### AI检测结果参数备注:</p>
+<p>wrinklePercentage:皱纹健康指数(取值范围0-100 雷达图展示 越高越好)</p>
+<p>spotsPercentage:色斑健康指数(取值范围0-100 雷达图展示 越高越好)</p>
+<p>porePercentage:毛孔健康指数(取值范围0-100 雷达图展示 越高越好)</p>
+<p>acnePercentage:粉刺/黑头健康指数(取值范围0-100 雷达图展示 越高越好)</p>
+<p>sensityareaPercentage:敏感健康指数(取值范围0-100 雷达图展示 越高越好)</p>
+<h3 id="_12">数据项请求示例</h3>
+<pre><code class="http">POST /user/add HTTP/1.1
+Host: http://www.metis.hoyar.com.cn
+Content-Type: application/json
+Request Body:
+{
+    &quot;skinAge&quot;:&quot;33&quot;,
+    &quot;stainScore&quot;:&quot;2&quot;,
+    &quot;blackheadAcne&quot;:&quot;0&quot;,
+    &quot;poreNum&quot;:&quot;1&quot;,
+    &quot;wrinkleNum&quot;:&quot;384&quot;,
+    &quot;sensityArea&quot;:&quot;0&quot;,
+    &quot;imgGroupFlag&quot;:&quot;410294&quot;,
+    &quot;phone&quot;:&quot;18718888888&quot;,
+    &quot;deviceId&quot;:&quot;CB26D7BAB2A3&quot;,
+        &quot;aiDiagnostic&quot;:{
+        &quot;comprehensiveSkinScore&quot;:&quot;143&quot;,
+        &quot;skinSymptomsSeverity&quot;:[
+            {
+                &quot;name&quot;:&quot;色斑&quot;,
+                &quot;predicted&quot;:&quot;50&quot;
+            },
+            {
+                &quot;name&quot;:&quot;黑头&quot;,
+                &quot;predicted&quot;:&quot;42&quot;
+            },
+            {
+                &quot;name&quot;:&quot;毛孔&quot;,
+                &quot;predicted&quot;:&quot;83&quot;
+            },
+            {
+                &quot;name&quot;:&quot;皱纹&quot;,
+                &quot;predicted&quot;:&quot;52&quot;
+            },
+            {
+                &quot;name&quot;:&quot;敏感&quot;,
+                &quot;predicted&quot;:&quot;42&quot;
+            }
+        ],
+        &quot;nationalAverageScore&quot;:[
+            {
+                &quot;avg&quot;:&quot;68&quot;,
+                &quot;name&quot;:&quot;色斑&quot;
+            },
+            {
+                &quot;avg&quot;:&quot;88&quot;,
+                &quot;name&quot;:&quot;黑头&quot;
+            },
+            {
+                &quot;avg&quot;:&quot;76&quot;,
+                &quot;name&quot;:&quot;毛孔&quot;
+            },
+            {
+                &quot;avg&quot;:&quot;65&quot;,
+                &quot;name&quot;:&quot;皱纹&quot;
+            },
+            {
+                &quot;avg&quot;:&quot;89&quot;,
+                &quot;name&quot;:&quot;敏感&quot;
+            }
+        ],
+        &quot;dermatosisProportion&quot;:[
+            {
+                &quot;prop&quot;:&quot;0.13&quot;,
+                &quot;name&quot;:&quot;色斑&quot;
+            },
+            {
+                &quot;prop&quot;:&quot;0.00&quot;,
+                &quot;name&quot;:&quot;黑头&quot;
+            },
+            {
+                &quot;prop&quot;:&quot;0.81&quot;,
+                &quot;name&quot;:&quot;毛孔&quot;
+            },
+            {
+                &quot;prop&quot;:&quot;0.06&quot;,
+                &quot;name&quot;:&quot;皱纹&quot;
+            },
+            {
+                &quot;prop&quot;:&quot;0.00&quot;,
+                &quot;name&quot;:&quot;敏感&quot;
+            }
+        ],
+        &quot;aiPredictingDermatosis&quot;:[
+            {
+                &quot;chance&quot;:&quot;0.93&quot;,
+                &quot;name&quot;:&quot;老年斑&quot;
+            },
+            {
+                &quot;chance&quot;:&quot;0.90&quot;,
+                &quot;name&quot;:&quot;痤疮&quot;
+            },
+            {
+                &quot;chance&quot;:&quot;0.88&quot;,
+                &quot;name&quot;:&quot;黄褐斑&quot;
+            }
+        ]
+    },
+    &quot;detectionResult&quot;:{
+        &quot;porePercentage&quot;:100,
+        &quot;sensityareaPercentage&quot;:100,
+        &quot;acnePercentage&quot;:100,
+        &quot;totalPoints&quot;:84,
+        &quot;wrinklePercentage&quot;:83,
+        &quot;spotsPercentage&quot;:91,
+        &quot;acneCnt&quot;:0,
+        &quot;spotsCount&quot;:1321,
+    &quot;sensityareaRatio&quot;:0,
+    &quot;wrinkleRatio&quot;:38,
+        &quot;diseaseList&quot;:[
+            {
+                &quot;name&quot;:&quot;痤疮&quot;
+            },
+            {
+                &quot;name&quot;:&quot;老年斑&quot;
+            }
+        ],
+        &quot;poreNum&quot;:1,
+        &quot;wrinkleNum&quot;:205
+    }
+}
+
+Response Code:200
+</code></pre>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../1.配置/" title="配置" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                配置
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../Objective-C SDK/01.配置/" title="SDK配置说明" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                SDK配置说明
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Email:Fuuqiu@163.com </br> 支持提供优化方案
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>
