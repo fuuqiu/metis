@@ -1,0 +1,1034 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Fuuqiu  云开平台开发文档">
+      
+      
+      
+        <meta name="author" content="Fuuqiu@163.com">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>WebAPI - AI+ 云开平台开发文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#webapi" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="AI+ 云开平台开发文档" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              AI+ 云开平台开发文档
+            </span>
+            <span class="md-header-nav__topic">
+              
+                WebAPI
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/fuuqiu/metis/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="AI+ 云开平台开发文档" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    AI+ 云开平台开发文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/fuuqiu/metis/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="AI+™ 产品介绍" class="md-nav__link">
+      AI+™ 产品介绍
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../AI智能图样例/" title="AI智能图样例" class="md-nav__link">
+      AI智能图样例
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../AI智能图说明/" title="AI智能图示例" class="md-nav__link">
+      AI智能图示例
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../AI智能设备/" title="AI智能设备介绍" class="md-nav__link">
+      AI智能设备介绍
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../AI检测数据/" title="AI智能检测数据" class="md-nav__link">
+      AI智能检测数据
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      SDK开发文档
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        SDK开发文档
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../全局异常信息/" title="全局异常信息" class="md-nav__link">
+      全局异常信息
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+    
+    <label class="md-nav__link" for="nav-6-2">
+      DJM 接口
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        DJM 接口
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../DJM 接口/1.配置/" title="配置" class="md-nav__link">
+      配置
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../DJM 接口/2.接口调用说明/" title="接口调用说明" class="md-nav__link">
+      接口调用说明
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3" checked>
+    
+    <label class="md-nav__link" for="nav-6-3">
+      Objective C SDK
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        Objective C SDK
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01.配置/" title="SDK配置说明" class="md-nav__link">
+      SDK配置说明
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02.接口调用/" title="接口调用" class="md-nav__link">
+      接口调用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        WebAPI
+      </label>
+    
+    <a href="./" title="WebAPI" class="md-nav__link md-nav__link--active">
+      WebAPI
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="1.获取案例组相关图片" class="md-nav__link">
+    1.获取案例组相关图片
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" title="2.获取案例组文案描述" class="md-nav__link">
+    2.获取案例组文案描述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3ai" title="3.获取AI检测结果" class="md-nav__link">
+    3.获取AI检测结果
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" title="4.数据解密算法" class="md-nav__link">
+    4.数据解密算法
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="1.获取案例组相关图片" class="md-nav__link">
+    1.获取案例组相关图片
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" title="2.获取案例组文案描述" class="md-nav__link">
+    2.获取案例组文案描述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3ai" title="3.获取AI检测结果" class="md-nav__link">
+    3.获取AI检测结果
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" title="4.数据解密算法" class="md-nav__link">
+    4.数据解密算法
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/fuuqiu/metis/edit/master/docs/SDK开发文档/Objective-C SDK/03.web-api.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="webapi">WebAPI</h1>
+<h2 id="1">1.获取案例组相关图片</h2>
+<pre><code class="http">POST /caseGroups/findImages?cgid=392744 HTTP/1.1
+Host: http://metisapi.hoyar.com.cn
+access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzI2MTU3MDAsImp0aSI6IjE2MDgifQ.Xd8hYCc8iPYQu7XLWiyUsg3ngzXgFgbv2O7xzuKrtxx
+Request Body:
+{ 
+}
+Response Code:200
+Response Body:
+{
+    &quot;data&quot;: &quot;BD62AC3BFD1B04165BA7D4ED&quot;,
+    &quot;sign&quot;: 1,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;code&quot;: 200
+}
+
+</code></pre>
+
+<ul>
+<li>Response Body Code == 200 请求成功进行数据解密</li>
+</ul>
+<pre><code class="json">[
+    {
+        &quot;cgid&quot;:392744,
+        &quot;imgurl&quot;:&quot;https://djm-skin.oss-cn-shenzhen.aliyuncs.com/Picture/1608/239486/392744/0.jpg&quot;,
+        &quot;itype&quot;:0,
+        &quot;createtime&quot;:&quot;Aug 2, 2019 11:02:01 AM&quot;,
+        &quot;id&quot;:4925758
+    },
+    {
+        &quot;cgid&quot;:392744,
+        &quot;imgurl&quot;:&quot;https://djm-skin.oss-cn-shenzhen.aliyuncs.com/Picture/1608/23xx86/39xx44/1.jpg&quot;,
+        &quot;itype&quot;:1,
+        &quot;createtime&quot;:&quot;Aug 2, 2019 11:02:01 AM&quot;,
+        &quot;id&quot;:4925759
+    },
+    {
+        &quot;cgid&quot;:392744,
+        &quot;imgurl&quot;:&quot;https://djm-skin.oss-cn-shenzhen.aliyuncs.com/Picture/1608/23xx86/39xx44/2.jpg&quot;,
+        &quot;itype&quot;:2,
+        &quot;createtime&quot;:&quot;Aug 2, 2019 11:02:01 AM&quot;,
+        &quot;id&quot;:4925760
+    },
+    {
+        &quot;cgid&quot;:392744,
+        &quot;imgurl&quot;:&quot;https://djm-skin.oss-cn-shenzhen.aliyuncs.com/Picture/1608/23xx86/39xx44/3.jpg&quot;,
+        &quot;itype&quot;:3,
+        &quot;createtime&quot;:&quot;Aug 2, 2019 11:02:01 AM&quot;,
+        &quot;id&quot;:4925761
+    },
+    {
+        &quot;cgid&quot;:392744,
+        &quot;imgurl&quot;:&quot;https://djm-skin.oss-cn-shenzhen.aliyuncs.com/Picture/1608/23xx86/39xx44/4.jpg&quot;,
+        &quot;itype&quot;:4,
+        &quot;createtime&quot;:&quot;Aug 2, 2019 11:02:01 AM&quot;,
+        &quot;id&quot;:4925762
+    },
+    {
+        &quot;cgid&quot;:392744,
+        &quot;imgurl&quot;:&quot;https://djm-skin.oss-cn-shenzhen.aliyuncs.com/Picture/1608/23xx86/39xx44/5.jpg&quot;,
+        &quot;itype&quot;:5,
+        &quot;createtime&quot;:&quot;Aug 2, 2019 11:02:01 AM&quot;,
+        &quot;id&quot;:4925763
+    }
+]
+</code></pre>
+
+<p>AI检测量化<strong>包含但不限于</strong>以下数据项</p>
+<table>
+<thead>
+<tr>
+<th align="left">字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">id</td>
+<td>Long</td>
+<td>ID</td>
+</tr>
+<tr>
+<td align="left">cgid</td>
+<td>Long</td>
+<td>案例组ID</td>
+</tr>
+<tr>
+<td align="left">imgurl</td>
+<td>12</td>
+<td>图片地url</td>
+</tr>
+<tr>
+<td align="left">itype</td>
+<td>Integer</td>
+<td>类型</td>
+</tr>
+<tr>
+<td align="left">createtime</td>
+<td>Date</td>
+<td>创建时间</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2">2.获取案例组文案描述</h2>
+<pre><code class="http">POST /report/findSkinDesc?language=tw&amp;cgid=392744 HTTP/1.1
+Host: http://metisapi.hoyar.com.cn
+access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzI2MTU3MDAsImp0aSI6IjE2MDgifQ.Xd8hYCc8iPYQu7XLWiyUsg3ngzXgFgbv2O7xzuKrtxx
+Request Body:
+{ 
+}
+Response Code:200
+Response Body:
+{
+    &quot;data&quot;: &quot;BD62AC3BFD1B04165BA7D4ED&quot;,
+    &quot;sign&quot;: 1,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;code&quot;: 200
+}
+</code></pre>
+
+<ul>
+<li>Response Body Code == 200 请求成功进行数据解密</li>
+</ul>
+<pre><code class="json">[
+    {
+        &quot;keystr&quot;:&quot;skin_violet&quot;,
+        &quot;keyvalue&quot;:&quot;护理：建议做好皮肤的清洁，选择适合自己的护肤用品，切不可贪图既便宜又速效的护肤产品&quot;,
+        &quot;id&quot;:422
+    },
+    {
+        &quot;keystr&quot;:&quot;skin_spots&quot;,
+        &quot;keyvalue&quot;:&quot;护理：建议家居加强防晒、保湿，多食用含维生素C、E的新鲜食物或水果，多喝水，白天尽量少食光敏性食物（芹菜、香菜、菠菜、油菜、香菇、柠檬、菠萝等）。选择适合的美白项目，规律生活，多注意睡眠质量&quot;,
+        &quot;id&quot;:423
+    },
+    {
+        &quot;keystr&quot;:&quot;skin_acne&quot;,
+        &quot;keyvalue&quot;:&quot;护理：做好深度清洁，避免过度清洁，少用手去挤或用针去挑，加强防晒。饮食尽量清淡，避免高糖、高脂、油炸食品，可适当补充A族、B族维生素，少熬夜、规律生活&quot;,
+        &quot;id&quot;:424
+    },
+    {
+        &quot;keystr&quot;:&quot;skin_pore&quot;,
+        &quot;keyvalue&quot;:&quot;护理：建议做好深度清洁，避免过度清洁，尽可能不用手去挤或用针去挑痘、粉刺，尽量减少遮瑕类产品的使用，加强防晒。饮食清淡，避免高糖、高脂、油炸食品，可适当补充B族维生素，少熬夜、规律生活&quot;,
+        &quot;id&quot;:425
+    },
+    {
+        &quot;keystr&quot;:&quot;skin_wrinkle&quot;,
+        &quot;keyvalue&quot;:&quot;描述：皮肤干燥、表面凹凸不光滑，干纹、细纹、静态纹明显，肤色晦暗无光泽、曝光部位易出现色素沉着
+护理：建议加强防晒，禁用去脂性强的洁面用品，平时做好补水保湿。及时选择适合的抗衰项目&quot;,
+        &quot;id&quot;:426
+    },
+    {
+        &quot;keystr&quot;:&quot;skin_sensitive&quot;,
+        &quot;keyvalue&quot;:&quot;描述：敏感图可见大小各异的圆形、局限的出血点
+护理：建议做好局部的清洁，不可过热刺激，不可用手去挤压或用针去挑，及时抗炎、抗感染治疗&quot;,
+        &quot;id&quot;:427
+    },
+    {
+        &quot;keystr&quot;:&quot;skin_desc&quot;,
+        &quot;keyvalue&quot;:&quot; 日光图-肉眼看到的情况                      极化图-皮肤表皮下的真实情况
+ 平行光-皮肤表面的真实情况              AI图-人工智能AI识别出的病症&quot;,
+        &quot;id&quot;:428
+    }
+]
+</code></pre>
+
+<p>AI检测量化<strong>包含但不限于</strong>以下数据项</p>
+<table>
+<thead>
+<tr>
+<th align="left">keystr值</th>
+<th>对应   itype</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">skin_violet</td>
+<td>3</td>
+<td>紫质</td>
+</tr>
+<tr>
+<td align="left">skin_spots</td>
+<td>12</td>
+<td>色斑</td>
+</tr>
+<tr>
+<td align="left">skin_acne</td>
+<td>4</td>
+<td>黑头</td>
+</tr>
+<tr>
+<td align="left">skin_pore</td>
+<td>11</td>
+<td>毛孔</td>
+</tr>
+<tr>
+<td align="left">skin_wrinkle</td>
+<td>13</td>
+<td>皱纹</td>
+</tr>
+<tr>
+<td align="left">skin_sensitive</td>
+<td>6</td>
+<td>皮肤敏感组图</td>
+</tr>
+<tr>
+<td align="left">skin_desc</td>
+<td>10</td>
+<td>皮肤标准 &amp; AI组图</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3ai">3.获取AI检测结果</h2>
+<pre><code class="http">POST /report/sdkAiDiagnosisReport?language=tw&amp;cgid=392744&amp;cid=123456 HTTP/1.1
+Host: http://metisapi.hoyar.com.cn
+access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzI2MTU3MDAsImp0aSI6IjE2MDgifQ.Xd8hYCc8iPYQu7XLWiyUsg3ngzXgFgbv2O7xzuKrtxx
+Request Body:
+{ 
+}
+Response Code:200
+Response Body:
+{
+    &quot;data&quot;: &quot;BD62AC3BFD1B04165BA7D4ED&quot;,
+    &quot;sign&quot;: 1,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;code&quot;: 200
+}
+</code></pre>
+
+<ul>
+<li>Response Body Code == 200 请求成功进行数据解密</li>
+</ul>
+<pre><code class="json">{
+    &quot;clientName&quot;:&quot;8&quot;,
+    &quot;sex&quot;:0,
+    &quot;totalScore&quot;:84.71559248620608,
+    &quot;mask&quot;:[
+        {
+            &quot;chance&quot;:8917,
+            &quot;name&quot;:&quot;色素痣&quot;,
+            &quot;id&quot;:29
+        },
+        {
+            &quot;chance&quot;:7086,
+            &quot;name&quot;:&quot;雀斑&quot;,
+            &quot;id&quot;:11
+        }
+    ],
+    &quot;predicted&quot;:[
+        {
+            &quot;name&quot;:&quot;色斑&quot;,
+            &quot;predicted&quot;:96
+        },
+        {
+            &quot;name&quot;:&quot;毛孔&quot;,
+            &quot;predicted&quot;:79.36854594482422
+        },
+        {
+            &quot;name&quot;:&quot;皱纹&quot;,
+            &quot;predicted&quot;:82.57682400000002
+        },
+        {
+            &quot;name&quot;:&quot;黑头&quot;,
+            &quot;predicted&quot;:80.917
+        },
+        {
+            &quot;name&quot;:&quot;敏感&quot;,
+            &quot;predicted&quot;:99
+        }
+    ],
+    &quot;avg&quot;:[
+        {
+            &quot;name&quot;:&quot;色斑&quot;,
+            &quot;avg&quot;:98
+        },
+        {
+            &quot;name&quot;:&quot;毛孔&quot;,
+            &quot;avg&quot;:78
+        },
+        {
+            &quot;name&quot;:&quot;皱纹&quot;,
+            &quot;avg&quot;:82
+        },
+        {
+            &quot;name&quot;:&quot;黑头&quot;,
+            &quot;avg&quot;:80
+        },
+        {
+            &quot;name&quot;:&quot;敏感&quot;,
+            &quot;avg&quot;:99
+        }
+    ],
+    &quot;prop&quot;:[
+        {
+            &quot;name&quot;:&quot;色斑&quot;,
+            &quot;prop&quot;:1781.03
+        },
+        {
+            &quot;name&quot;:&quot;毛孔&quot;,
+            &quot;prop&quot;:6023.99
+        },
+        {
+            &quot;name&quot;:&quot;皱纹&quot;,
+            &quot;prop&quot;:2169.21
+        },
+        {
+            &quot;name&quot;:&quot;黑头&quot;,
+            &quot;prop&quot;:25.77
+        },
+        {
+            &quot;name&quot;:&quot;敏感&quot;,
+            &quot;prop&quot;:0
+        }
+    ],
+    &quot;senseData&quot;:[
+        {
+            &quot;name&quot;:&quot;色斑&quot;,
+            &quot;value&quot;:49488
+        },
+        {
+            &quot;name&quot;:&quot;毛孔&quot;,
+            &quot;value&quot;:316
+        },
+        {
+            &quot;name&quot;:&quot;皱纹&quot;,
+            &quot;value&quot;:315
+        },
+        {
+            &quot;name&quot;:&quot;黑头&quot;,
+            &quot;value&quot;:716
+        },
+        {
+            &quot;name&quot;:&quot;敏感&quot;,
+            &quot;value&quot;:0
+        }
+    ]
+}
+</code></pre>
+
+<h2 id="4">4.数据解密算法</h2>
+<pre><code class="java">public class SecureRandomUtils {  
+    /**
+     * 解密
+     *
+     * @param sSrc 密文
+     * @param sKey 秘钥 16位字符串
+     * @return 解密后数据字符
+     * @throws Exception
+     */
+    public static String Decrypt(String sSrc, String sKey) throws Exception {
+        try {
+            // 判断Key是否正确
+            if (sKey == null) {
+                System.out.print(&quot;Key为空null&quot;);
+                return null;
+            }
+            // 判断Key是否为16位
+            if (sKey.length() != 16) {
+                System.out.print(&quot;Key长度不是16位&quot;);
+                return null;
+            }
+            byte[] raw = sKey.getBytes(&quot;utf-8&quot;);
+            SecretKeySpec skeySpec = new SecretKeySpec(raw, &quot;AES&quot;);
+            Cipher cipher = Cipher.getInstance(&quot;AES/ECB/PKCS5Padding&quot;);
+            cipher.init(Cipher.DECRYPT_MODE, skeySpec);
+            byte[] encrypted1 = toByte(sSrc);//
+            try {
+                byte[] original = cipher.doFinal(encrypted1);
+                String originalString = new String(original, &quot;utf-8&quot;);
+                return originalString;
+            } catch (Exception e) {
+                System.out.println(e.toString());
+                return null;
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
+            return null;
+        }
+    }
+
+    private static byte[] toByte(String hexString) {
+        int len = hexString.length() / 2;
+        byte[] result = new byte[len];
+        for (int i = 0; i &lt; len; i++)
+            result[i] = Integer.valueOf(hexString.substring(2 * i, 2 * i + 2), 16).byteValue();
+        return result;
+    }
+
+    private static String toHex(String txt) {
+        return toHex(txt.getBytes());
+    }
+
+    private static String toHex(byte[] buf) {
+        if (buf == null)
+            return &quot;&quot;;
+        StringBuffer result = new StringBuffer(2 * buf.length);
+        for (int i = 0; i &lt; buf.length; i++) {
+            appendHex(result, buf[i]);
+        }
+        return result.toString();
+    }
+
+    private final static String HEX = &quot;0123456789ABCDEF&quot;;
+
+    private static void appendHex(StringBuffer sb, byte b) {
+        sb.append(HEX.charAt((b &gt;&gt; 4) &amp; 0x0f)).append(HEX.charAt(b &amp; 0x0f));
+    }
+
+  public static final String ALLCHAR =      &quot;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+
+    public static void main(String[] args) throws Exception { 
+        // 解密
+        String DeString = SecureRandomUtils.Decrypt(&quot;BB81C1CB164B3 &quot;,&quot;xxxOm3gdIBKdaaIY&quot;);
+        System.out.println(&quot;解密后的字串：&quot; + DeString); 
+    } 
+}
+
+</code></pre>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../02.接口调用/" title="接口调用" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                接口调用
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Email:Fuuqiu@163.com </br> 支持提供优化方案
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>

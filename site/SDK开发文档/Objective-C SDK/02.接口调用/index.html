@@ -40,7 +40,7 @@
     
     
       
-        <title>02.接口调用 - AI+ 云开平台开发文档</title>
+        <title>接口调用 - AI+ 云开平台开发文档</title>
       
     
     
@@ -107,7 +107,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                02.接口调用
+                接口调用
               
             </span>
           
@@ -401,11 +401,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        02.接口调用
+        接口调用
       </label>
     
-    <a href="./" title="02.接口调用" class="md-nav__link md-nav__link--active">
-      02.接口调用
+    <a href="./" title="接口调用" class="md-nav__link md-nav__link--active">
+      接口调用
     </a>
     
       
@@ -521,6 +521,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03.web-api/" title="WebAPI" class="md-nav__link">
+      WebAPI
+    </a>
   </li>
 
         
@@ -668,9 +680,7 @@
                   <a href="https://github.com/fuuqiu/metis/edit/master/docs/SDK开发文档/Objective-C SDK/02.接口调用.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <hr />
-<hr />
-<h1 id="_1">接口调用</h1>
+                <h1 id="_1">接口调用</h1>
 <h2 id="_2">拍照 回调 信息</h2>
 <pre><code class="objective-c"> __weak typeof(&amp;*self) ws = self;
 
@@ -937,36 +947,36 @@ typedef void(^imageBlock)(NSArray *images,NSDictionary *info);//成功的回调
         &quot;clientName&quot;: &quot;er&quot;, //用户名
         &quot;sex&quot;: 0,   //性别 0女 1 男
         &quot;createTime&quot;: 1566271175000,
-        &quot;totalScore&quot;: 958000.0, //量化综合得分 百分制:totalScore/10000
+        &quot;totalScore&quot;: 95.80000, //量化综合得分 百分制
         &quot;mask&quot;: [   //AI检测二类别量化预测数据
             {
                 &quot;chance&quot;: 9166.0,
                 &quot;name&quot;: &quot;色素痣&quot;   //次检测项名
             }
         ],
-        &quot;predicted&quot;: [  //AI检测一类别量化数据计算得分
+        &quot;predicted&quot;: [ 
             {
-                &quot;name&quot;: &quot;色斑&quot;, //主检测项名
-                &quot;predicted&quot;: 46.71487924181568
+                &quot;name&quot;:&quot;色斑&quot;,            //主检测项名
+                &quot;predicted&quot;:96          //百分制
             },
             {
-                &quot;name&quot;: &quot;毛孔&quot;,
-                &quot;predicted&quot;: 42.85476048468703
+                &quot;name&quot;:&quot;毛孔&quot;,
+                &quot;predicted&quot;:79.36854594482422
             },
             {
-                &quot;name&quot;: &quot;皱纹&quot;,
-                &quot;predicted&quot;: 43.02467368641215
+                &quot;name&quot;:&quot;皱纹&quot;,
+                &quot;predicted&quot;:82.57682400000002
             },
             {
-                &quot;name&quot;: &quot;黑头&quot;,
-                &quot;predicted&quot;: 43.239676458067265
+                &quot;name&quot;:&quot;黑头&quot;,
+                &quot;predicted&quot;:80.917
             },
             {
-                &quot;name&quot;: &quot;敏感&quot;,
-                &quot;predicted&quot;: 42.0
+                &quot;name&quot;:&quot;敏感&quot;,
+                &quot;predicted&quot;:99
             }
         ],
-        &quot;avg&quot;: [    //全库AI检测一类别量化数据平均值
+        &quot;avg&quot;: [    //全库AI检测一类别量化数据平均值 百分制
             {
                 &quot;avg&quot;: 68,
                 &quot;name&quot;: &quot;色斑&quot;
@@ -988,7 +998,7 @@ typedef void(^imageBlock)(NSArray *images,NSDictionary *info);//成功的回调
                 &quot;name&quot;: &quot;敏感&quot;
             }
         ],
-        &quot;prop&quot;: [//  AI检测一类别量化数据占比  百分制: prop/10000 
+        &quot;prop&quot;: [//  AI检测一类别量化数据占比
             {
                 &quot;name&quot;: &quot;色斑&quot;,
                 &quot;prop&quot;: 4362.67
@@ -1357,6 +1367,20 @@ typedef void(^imageBlock)(NSArray *images,NSDictionary *info);//成功的回调
             </div>
           </a>
         
+        
+          <a href="../03.web-api/" title="WebAPI" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                WebAPI
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>

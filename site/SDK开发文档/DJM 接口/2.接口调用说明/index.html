@@ -474,22 +474,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_10" title="检测报告字段说明" class="md-nav__link">
-    检测报告字段说明
+  <a href="#_10" title="字段说明" class="md-nav__link">
+    字段说明
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ai" title="AI检测报告参数备注:" class="md-nav__link">
-    AI检测报告参数备注:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" title="检测结果字段说明" class="md-nav__link">
-    检测结果字段说明
+  <a href="#_11" title="参数备注:" class="md-nav__link">
+    参数备注:
   </a>
   
 </li>
@@ -559,8 +552,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Objective-C SDK/02.接口调用/" title="02.接口调用" class="md-nav__link">
-      02.接口调用
+    <a href="../../Objective-C SDK/02.接口调用/" title="接口调用" class="md-nav__link">
+      接口调用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Objective-C SDK/03.web-api/" title="WebAPI" class="md-nav__link">
+      WebAPI
     </a>
   </li>
 
@@ -699,22 +704,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_10" title="检测报告字段说明" class="md-nav__link">
-    检测报告字段说明
+  <a href="#_10" title="字段说明" class="md-nav__link">
+    字段说明
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ai" title="AI检测报告参数备注:" class="md-nav__link">
-    AI检测报告参数备注:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" title="检测结果字段说明" class="md-nav__link">
-    检测结果字段说明
+  <a href="#_11" title="参数备注:" class="md-nav__link">
+    参数备注:
   </a>
   
 </li>
@@ -830,6 +828,7 @@ Response Body:
 }
 </code></pre>
 
+<hr />
 <h2 id="api_1">用户数据协同API</h2>
 <h3 id="_4">字段说明</h3>
 <table>
@@ -879,7 +878,7 @@ Response Body:
 <td>否</td>
 </tr>
 <tr>
-<td>telphone</td>
+<td>phone</td>
 <td>String</td>
 <td>电话</td>
 <td>否</td>
@@ -897,13 +896,14 @@ Request Body:
     &quot;customerFlag&quot;:&quot;16130&quot;,
     &quot;sex&quot;: &quot;男&quot;,
     &quot;age&quot;: &quot;18&quot;,
-    &quot;birthday&quot;: &quot;2018-03-27&quot;,
-    &quot;telphone&quot;: &quot;18888888888&quot;
+    &quot;birthday&quot;: &quot;Fri Oct 15 00:00:00 CST 1999&quot;,
+    &quot;phone&quot;: &quot;18888888888&quot;
 }
 
 Response Code:200
 </code></pre>
 
+<hr />
 <h2 id="api_2">案例组数据协同API</h2>
 <h3 id="_6">字段说明</h3>
 <table>
@@ -982,8 +982,9 @@ Request Body:
 Response Code:200
 </code></pre>
 
+<hr />
 <h2 id="api_3">案例图数据项协同API</h2>
-<h3 id="_10">检测报告字段说明</h3>
+<h3 id="_10">字段说明</h3>
 <table>
 <thead>
 <tr>
@@ -994,6 +995,12 @@ Response Code:200
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>imgGroupFlag</td>
+<td>String</td>
+<td>数据项所属分组编号</td>
+<td>是</td>
+</tr>
 <tr>
 <td>skinAge</td>
 <td>String</td>
@@ -1021,20 +1028,14 @@ Response Code:200
 <tr>
 <td>wrinkleNum</td>
 <td>String</td>
-<td>皱纹数量</td>
+<td>皱纹数量 单位:条</td>
 <td>否</td>
 </tr>
 <tr>
 <td>sensityArea</td>
 <td>String</td>
-<td>敏感面积  单位:像素</td>
+<td>敏感面积 单位:像素</td>
 <td>否</td>
-</tr>
-<tr>
-<td>imgGroupFlag</td>
-<td>String</td>
-<td>数据项所属分组编号</td>
-<td>是</td>
 </tr>
 <tr>
 <td>phone</td>
@@ -1049,189 +1050,206 @@ Response Code:200
 <td>否</td>
 </tr>
 <tr>
-<td>aiDiagnostic</td>
-<td>Object</td>
-<td>AI检测报告</td>
-<td>否</td>
+<td><strong>aiDiagnostic</strong></td>
+<td><strong>Object</strong></td>
+<td><strong>AI检测报告</strong></td>
+<td><strong>否</strong></td>
 </tr>
 <tr>
-<td>comprehensiveSkinScore</td>
+<td>#--comprehensiveSkinScore</td>
 <td>String</td>
 <td>皮肤综合得分 越高越好 取值范围(42-98)</td>
 <td>否</td>
 </tr>
 <tr>
-<td>aiPredictingDermatosis</td>
+<td>#--aiPredictingDermatosis</td>
 <td>Object</td>
 <td>AI预测病症类型 单位(%)</td>
 <td>否</td>
 </tr>
 <tr>
-<td>dermatosisProportion</td>
-<td>Object</td>
-<td>皮肤病症 单位(%)</td>
-<td>否</td>
-</tr>
-<tr>
-<td>skinSymptomsSeverity</td>
-<td>Object</td>
-<td>皮肤病症严重程度 越高越差 取值范围(42-98)</td>
-<td>否</td>
-</tr>
-<tr>
-<td>nationalAverageScore</td>
-<td>Object</td>
-<td>病症在全国平均得分 取值范围(42-98)</td>
-<td>否</td>
-</tr>
-<tr>
-<td>name</td>
+<td>#----name</td>
 <td>String</td>
 <td>病症名称</td>
 <td>否</td>
 </tr>
 <tr>
-<td>chance</td>
+<td>#----chance</td>
 <td>String</td>
 <td>概率</td>
 <td>否</td>
 </tr>
 <tr>
-<td>prop</td>
+<td>#--dermatosisProportion</td>
+<td>Object</td>
+<td>皮肤病症 单位(%)</td>
+<td>否</td>
+</tr>
+<tr>
+<td>#----name</td>
+<td>String</td>
+<td>病症名称</td>
+<td>否</td>
+</tr>
+<tr>
+<td>#----prop</td>
 <td>String</td>
 <td>占比</td>
 <td>否</td>
 </tr>
 <tr>
-<td>predicted</td>
+<td>#--skinSymptomsSeverity</td>
+<td>Object</td>
+<td>皮肤病症严重程度 越高越好 取值范围(42-98)</td>
+<td>否</td>
+</tr>
+<tr>
+<td>#----name</td>
+<td>String</td>
+<td>病症名称</td>
+<td>否</td>
+</tr>
+<tr>
+<td>#----predicted</td>
 <td>String</td>
 <td>程度</td>
 <td>否</td>
 </tr>
 <tr>
-<td>avg</td>
+<td>#--nationalAverageScore</td>
+<td>Object</td>
+<td>病症在全国平均得分 取值范围(42-98)</td>
+<td>否</td>
+</tr>
+<tr>
+<td>#----name</td>
+<td>String</td>
+<td>病症名称</td>
+<td>否</td>
+</tr>
+<tr>
+<td>#----avg</td>
 <td>String</td>
 <td>平均</td>
 <td>否</td>
 </tr>
-</tbody>
-</table>
-<h3 id="ai">AI检测报告参数备注:</h3>
-<p>skinAge :皮肤年龄展示或解析来源 - 生理老化图 </p>
-<p>stainScore :色斑程度展示或解析来源 - 斑点图及斑的趋势图</p>
-<p>blackheadAcne :粉刺数量展示或解析来源 - 毛孔图</p>
-<p>poreNum :毛孔数量展示或解析来源 - 毛孔图</p>
-<p>wrinkleNum :皱纹数量展示或解析来源 - 皱纹图</p>
-<p>sensityArea :敏感面积展示或解析来源 - 敏感图</p>
-<p>aiDiagnostic :AI诊断报告数据来源由AI诊断图获取 除aiPredictingDermatosis(顾客皮肤情况不同 对象内元素个数不同)  其余参数对象内均有五个维度 </p>
-<p>comprehensiveSkinScore:皮肤综合得分由报告内的病症严重程度 AI预测病症类型等参数综合计算得出 病症程度越低得分越高</p>
-<p>aiPredictingDermatosis:AI对脸部皮肤可能出现的问题进行预估 仅作为参考 实际情况需要医生或技师判断</p>
-<p>dermatosisProportion:病症在顾客脸部皮肤多个问题中占比为多少 占比越低 皮肤状况越良好</p>
-<p>skinSymptomsSeverity: 皮肤病症严重程度 严重越高 病症在皮肤中越明显</p>
-<p>nationalAverageScore: 检测仪根据软件所在使用国 获取相应的数据计算得出平均分</p>
-<h3 id="_11">检测结果字段说明</h3>
-<table>
-<thead>
 <tr>
-<th>检测结果参数</th>
-<th>类型</th>
-<th>描述</th>
-<th>必填</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>detectionResult</td>
-<td>Object</td>
-<td>AI检测结果</td>
-<td>否</td>
+<td><strong>detectionResult</strong></td>
+<td><strong>Object</strong></td>
+<td><strong>AI检测结果</strong></td>
+<td><strong>否</strong></td>
 </tr>
 <tr>
-<td>totalPoints</td>
-<td>String</td>
+<td>#--totalPoints</td>
+<td>Integer</td>
 <td>皮肤综合得分 越高越好 取值范围(42-98)</td>
 <td>否</td>
 </tr>
 <tr>
-<td>poreNum</td>
-<td>String</td>
+<td>#--poreNum</td>
+<td>Integer</td>
 <td>毛孔数量</td>
 <td>否</td>
 </tr>
 <tr>
-<td>acneCnt</td>
-<td>String</td>
+<td>#--acneCnt</td>
+<td>Integer</td>
 <td>粉刺数量</td>
 <td>否</td>
 </tr>
 <tr>
-<td>sensityareaRatio</td>
-<td>String</td>
+<td>#--sensityareaRatio</td>
+<td>Integer</td>
 <td>敏感占比 单位%</td>
 <td>否</td>
 </tr>
 <tr>
-<td>wrinkleRatio</td>
-<td>String</td>
+<td>#--wrinkleRatio</td>
+<td>Integer</td>
 <td>皱纹占比 单位%</td>
 <td>否</td>
 </tr>
 <tr>
-<td>spotsCount</td>
-<td>String</td>
+<td>#--spotsCount</td>
+<td>Integer</td>
 <td>色斑数量</td>
 <td>否</td>
 </tr>
 <tr>
-<td>wrinkleNum</td>
-<td>String</td>
+<td>#--wrinkleNum</td>
+<td>Integer</td>
 <td>皱纹数量</td>
 <td>否</td>
 </tr>
 <tr>
-<td>diseaseList</td>
+<td>#--wrinklePercentage</td>
+<td>Integer</td>
+<td>皱纹健康指数</td>
+<td>否</td>
+</tr>
+<tr>
+<td>#--spotsPercentage</td>
+<td>Integer</td>
+<td>色斑健康指数</td>
+<td>否</td>
+</tr>
+<tr>
+<td>#--porePercentage</td>
+<td>Integer</td>
+<td>毛孔健康指数</td>
+<td>否</td>
+</tr>
+<tr>
+<td>#--acnePercentage</td>
+<td>Integer</td>
+<td>粉刺/黑头健康指数</td>
+<td>否</td>
+</tr>
+<tr>
+<td>#--sensityareaPercentage</td>
+<td>Integer</td>
+<td>敏感健康指数</td>
+<td>否</td>
+</tr>
+<tr>
+<td>#--diseaseList</td>
 <td>Object</td>
 <td>AI预测病症类型</td>
 <td>否</td>
 </tr>
 <tr>
-<td>wrinklePercentage</td>
-<td>Object</td>
-<td>皱纹健康指数</td>
-<td>否</td>
-</tr>
-<tr>
-<td>spotsPercentage</td>
-<td>Object</td>
-<td>色斑健康指数</td>
-<td>否</td>
-</tr>
-<tr>
-<td>porePercentage</td>
-<td>Object</td>
-<td>毛孔健康指数</td>
-<td>否</td>
-</tr>
-<tr>
-<td>acnePercentage</td>
-<td>Object</td>
-<td>粉刺/黑头健康指数</td>
-<td>否</td>
-</tr>
-<tr>
-<td>sensityareaPercentage</td>
-<td>Object</td>
-<td>敏感健康指数</td>
+<td>#----name</td>
+<td>String</td>
+<td>病症名称</td>
 <td>否</td>
 </tr>
 </tbody>
 </table>
-<p>### AI检测结果参数备注:</p>
-<p>wrinklePercentage:皱纹健康指数(取值范围0-100 雷达图展示 越高越好)</p>
-<p>spotsPercentage:色斑健康指数(取值范围0-100 雷达图展示 越高越好)</p>
-<p>porePercentage:毛孔健康指数(取值范围0-100 雷达图展示 越高越好)</p>
-<p>acnePercentage:粉刺/黑头健康指数(取值范围0-100 雷达图展示 越高越好)</p>
-<p>sensityareaPercentage:敏感健康指数(取值范围0-100 雷达图展示 越高越好)</p>
+<h3 id="_11">参数备注:</h3>
+<ul>
+<li>skinAge :皮肤年龄展示或解析来源 - 生理老化图</li>
+<li>stainScore :色斑程度展示或解析来源 - 斑点图及斑的趋势图</li>
+<li>blackheadAcne :粉刺数量展示或解析来源 - 毛孔图</li>
+<li>poreNum :毛孔数量展示或解析来源 - 毛孔图</li>
+<li>wrinkleNum :皱纹数量展示或解析来源 - 皱纹图</li>
+<li>sensityArea :敏感面积展示或解析来源 - 敏感图</li>
+<li><strong>aiDiagnostic</strong> :AI诊断报告<ul>
+<li>comprehensiveSkinScore:综合得分由病症严重程度 AI预测病症类型等参数综合计算得出 病症程度越低得分越高</li>
+<li>aiPredictingDermatosis:AI对脸部皮肤可能出现的问题进行预估 仅作为参考 实际情况需要医生或技师判断</li>
+<li>dermatosisProportion:病症在顾客脸部皮肤多个问题中占比为多少 占比越低 皮肤状况越良好</li>
+<li>skinSymptomsSeverity: 皮肤病症严重程度 评分越高 病症在皮肤中越不明显</li>
+<li>nationalAverageScore: 检测仪根据软件所在使用国 获取相应的数据计算得出平均分</li>
+</ul>
+</li>
+<li><strong>detectionResult</strong>:AI检测结果(猫咪APP上雷达图数据集)<ul>
+<li>wrinklePercentage:皱纹健康指数(取值范围0-100 越高越好)</li>
+<li>spotsPercentage:色斑健康指数(取值范围0-100 越高越好)</li>
+<li>porePercentage:毛孔健康指数(取值范围0-100 越高越好)</li>
+<li>acnePercentage:粉刺/黑头健康指数(取值范围0-100 越高越好)</li>
+<li>sensityareaPercentage:敏感健康指数(取值范围0-100 越高越好)</li>
+</ul>
+</li>
+</ul>
 <h3 id="_12">数据项请求示例</h3>
 <pre><code class="http">POST /user/add HTTP/1.1
 Host: http://www.metis.hoyar.com.cn
@@ -1247,87 +1265,87 @@ Request Body:
     &quot;imgGroupFlag&quot;:&quot;410294&quot;,
     &quot;phone&quot;:&quot;18718888888&quot;,
     &quot;deviceId&quot;:&quot;CB26D7BAB2A3&quot;,
-        &quot;aiDiagnostic&quot;:{
-        &quot;comprehensiveSkinScore&quot;:&quot;143&quot;,
-        &quot;skinSymptomsSeverity&quot;:[
-            {
-                &quot;name&quot;:&quot;色斑&quot;,
-                &quot;predicted&quot;:&quot;50&quot;
-            },
-            {
-                &quot;name&quot;:&quot;黑头&quot;,
-                &quot;predicted&quot;:&quot;42&quot;
-            },
-            {
-                &quot;name&quot;:&quot;毛孔&quot;,
-                &quot;predicted&quot;:&quot;83&quot;
-            },
-            {
-                &quot;name&quot;:&quot;皱纹&quot;,
-                &quot;predicted&quot;:&quot;52&quot;
-            },
-            {
-                &quot;name&quot;:&quot;敏感&quot;,
-                &quot;predicted&quot;:&quot;42&quot;
-            }
+    &quot;aiDiagnostic&quot;:{
+       &quot;comprehensiveSkinScore&quot;:&quot;143&quot;,
+       &quot;skinSymptomsSeverity&quot;:[
+          {
+               &quot;name&quot;:&quot;色斑&quot;,
+               &quot;predicted&quot;:&quot;50&quot;
+           },
+           {
+               &quot;name&quot;:&quot;黑头&quot;,
+               &quot;predicted&quot;:&quot;42&quot;
+           },
+           {
+               &quot;name&quot;:&quot;毛孔&quot;,
+               &quot;predicted&quot;:&quot;83&quot;
+           },
+           {
+               &quot;name&quot;:&quot;皱纹&quot;,
+               &quot;predicted&quot;:&quot;52&quot;
+           },
+           {
+               &quot;name&quot;:&quot;敏感&quot;,
+               &quot;predicted&quot;:&quot;42&quot;
+           }
         ],
         &quot;nationalAverageScore&quot;:[
-            {
-                &quot;avg&quot;:&quot;68&quot;,
-                &quot;name&quot;:&quot;色斑&quot;
-            },
-            {
-                &quot;avg&quot;:&quot;88&quot;,
-                &quot;name&quot;:&quot;黑头&quot;
-            },
-            {
-                &quot;avg&quot;:&quot;76&quot;,
-                &quot;name&quot;:&quot;毛孔&quot;
-            },
-            {
-                &quot;avg&quot;:&quot;65&quot;,
-                &quot;name&quot;:&quot;皱纹&quot;
-            },
-            {
-                &quot;avg&quot;:&quot;89&quot;,
-                &quot;name&quot;:&quot;敏感&quot;
-            }
+           {
+               &quot;avg&quot;:&quot;68&quot;,
+               &quot;name&quot;:&quot;色斑&quot;
+           },
+           {
+               &quot;avg&quot;:&quot;88&quot;,
+               &quot;name&quot;:&quot;黑头&quot;
+           },
+           {
+               &quot;avg&quot;:&quot;76&quot;,
+               &quot;name&quot;:&quot;毛孔&quot;
+           },
+           {
+               &quot;avg&quot;:&quot;65&quot;,
+               &quot;name&quot;:&quot;皱纹&quot;
+           },
+           {
+               &quot;avg&quot;:&quot;89&quot;,
+               &quot;name&quot;:&quot;敏感&quot;
+           }
         ],
         &quot;dermatosisProportion&quot;:[
-            {
-                &quot;prop&quot;:&quot;0.13&quot;,
-                &quot;name&quot;:&quot;色斑&quot;
-            },
-            {
-                &quot;prop&quot;:&quot;0.00&quot;,
-                &quot;name&quot;:&quot;黑头&quot;
-            },
-            {
-                &quot;prop&quot;:&quot;0.81&quot;,
-                &quot;name&quot;:&quot;毛孔&quot;
-            },
-            {
-                &quot;prop&quot;:&quot;0.06&quot;,
-                &quot;name&quot;:&quot;皱纹&quot;
-            },
-            {
-                &quot;prop&quot;:&quot;0.00&quot;,
-                &quot;name&quot;:&quot;敏感&quot;
-            }
+           {
+               &quot;prop&quot;:&quot;0.13&quot;,
+               &quot;name&quot;:&quot;色斑&quot;
+           },
+           {
+               &quot;prop&quot;:&quot;0.00&quot;,
+               &quot;name&quot;:&quot;黑头&quot;
+           },
+           {
+               &quot;prop&quot;:&quot;0.81&quot;,
+               &quot;name&quot;:&quot;毛孔&quot;
+           },
+           {
+               &quot;prop&quot;:&quot;0.06&quot;,
+               &quot;name&quot;:&quot;皱纹&quot;
+           },
+           {
+               &quot;prop&quot;:&quot;0.00&quot;,
+               &quot;name&quot;:&quot;敏感&quot;
+           }
         ],
         &quot;aiPredictingDermatosis&quot;:[
-            {
-                &quot;chance&quot;:&quot;0.93&quot;,
-                &quot;name&quot;:&quot;老年斑&quot;
-            },
-            {
-                &quot;chance&quot;:&quot;0.90&quot;,
-                &quot;name&quot;:&quot;痤疮&quot;
-            },
-            {
-                &quot;chance&quot;:&quot;0.88&quot;,
-                &quot;name&quot;:&quot;黄褐斑&quot;
-            }
+           {
+               &quot;chance&quot;:&quot;0.93&quot;,
+               &quot;name&quot;:&quot;老年斑&quot;
+           },
+           {
+               &quot;chance&quot;:&quot;0.90&quot;,
+               &quot;name&quot;:&quot;痤疮&quot;
+           },
+           {
+               &quot;chance&quot;:&quot;0.88&quot;,
+               &quot;name&quot;:&quot;黄褐斑&quot;
+           }
         ]
     },
     &quot;detectionResult&quot;:{
@@ -1341,16 +1359,16 @@ Request Body:
         &quot;spotsCount&quot;:1321,
     &quot;sensityareaRatio&quot;:0,
     &quot;wrinkleRatio&quot;:38,
-        &quot;diseaseList&quot;:[
-            {
-                &quot;name&quot;:&quot;痤疮&quot;
-            },
-            {
-                &quot;name&quot;:&quot;老年斑&quot;
-            }
-        ],
-        &quot;poreNum&quot;:1,
+    &quot;poreNum&quot;:1,
         &quot;wrinkleNum&quot;:205
+        &quot;diseaseList&quot;:[
+           {
+               &quot;name&quot;:&quot;痤疮&quot;
+           },
+           {
+               &quot;name&quot;:&quot;老年斑&quot;
+           }
+        ]
     }
 }
 
