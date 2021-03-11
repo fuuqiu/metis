@@ -1,0 +1,2067 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Fuuqiu  云开平台开发文档">
+      
+      
+      
+        <meta name="author" content="Fuuqiu@163.com">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+    
+    
+      
+        <title>02.SDK1.0服务端接口 - AI+ 云开平台开发文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#02sdk10" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="AI+ 云开平台开发文档" class="md-header-nav__button md-logo" aria-label="AI+ 云开平台开发文档">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            AI+ 云开平台开发文档
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              02.SDK1.0服务端接口
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/fuuqiu/metis/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="AI+ 云开平台开发文档" class="md-nav__button md-logo" aria-label="AI+ 云开平台开发文档">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    AI+ 云开平台开发文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/fuuqiu/metis/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="AI+™ 产品介绍" class="md-nav__link">
+      AI+™ 产品介绍
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../AI%E6%99%BA%E8%83%BD%E5%9B%BE%E6%A0%B7%E4%BE%8B/" title="AI智能图样例" class="md-nav__link">
+      AI智能图样例
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../AI%E6%99%BA%E8%83%BD%E5%9B%BE%E8%AF%B4%E6%98%8E/" title="AI智能图示例" class="md-nav__link">
+      AI智能图示例
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../AI%E6%99%BA%E8%83%BD%E8%AE%BE%E5%A4%87/" title="AI智能设备介绍" class="md-nav__link">
+      AI智能设备介绍
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../AI%E6%A3%80%E6%B5%8B%E6%95%B0%E6%8D%AE/" title="AI智能检测数据" class="md-nav__link">
+      AI智能检测数据
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      开发文档
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="开发文档" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        开发文档
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E4%BF%A1%E6%81%AF/" title="全局异常信息" class="md-nav__link">
+      全局异常信息
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+    
+    <label class="md-nav__link" for="nav-6-2">
+      Web数据协同
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Web数据协同" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        <span class="md-nav__icon md-icon"></span>
+        Web数据协同
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Web%E6%95%B0%E6%8D%AE%E5%8D%8F%E5%90%8C/1.%E5%9B%9E%E8%B0%83%E6%8E%A5%E5%8F%A3%E9%85%8D%E7%BD%AE/" title="01.回调接口配置" class="md-nav__link">
+      01.回调接口配置
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Web%E6%95%B0%E6%8D%AE%E5%8D%8F%E5%90%8C/2.%E5%9B%9E%E8%B0%83%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E/" title="02.回调接口说明" class="md-nav__link">
+      02.回调接口说明
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3" checked>
+    
+    <label class="md-nav__link" for="nav-6-3">
+      移动端ios
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="移动端ios" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        <span class="md-nav__icon md-icon"></span>
+        移动端ios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01.%E6%8E%88%E6%9D%83%E9%85%8D%E7%BD%AE/" title="01.授权配置" class="md-nav__link">
+      01.授权配置
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        02.SDK1.0服务端接口
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="02.SDK1.0服务端接口" class="md-nav__link md-nav__link--active">
+      02.SDK1.0服务端接口
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sdk-v10-sdksdk20" class="md-nav__link">
+    ！！！ 目前SDk V1.0 停止维护，SDK对接请移步SDK2.0协同文档
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xcode-sdk" class="md-nav__link">
+    一、Xcode SDK 配置
+  </a>
+  
+    <nav class="md-nav" aria-label="一、Xcode SDK 配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#token" class="md-nav__link">
+    Token获取
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    拍照 回调 信息
+  </a>
+  
+    <nav class="md-nav" aria-label="拍照 回调 信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    传入 拍照字段说明
+  </a>
+  
+    <nav class="md-nav" aria-label="传入 拍照字段说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    回调 'AI' 图片信息字段说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local" class="md-nav__link">
+    回调 'local' 图片信息字段说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info" class="md-nav__link">
+    回调 'info' 信息字段说明 用于获取检测报告的请求
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    请求检测报告数据字段说明
+  </a>
+  
+    <nav class="md-nav" aria-label="请求检测报告数据字段说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    返回检测报告数据字段说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    AI检测项量化说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai_2" class="md-nav__link">
+    AI检测项描述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    返回
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    二、WEB端服务接口
+  </a>
+  
+    <nav class="md-nav" aria-label="二、WEB端服务接口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1.获取案例组相关图片
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2.获取案例组文案描述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3ai" class="md-nav__link">
+    3.获取AI检测结果
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4.数据解密算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03.App%E5%94%A4%E8%B5%B7%E6%A8%A1%E5%BC%8F/" title="03.App唤起模式" class="md-nav__link">
+      03.App唤起模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04.SDK2.0%E5%8D%8F%E5%90%8C/" title="04.SDK2.0协同" class="md-nav__link">
+      04.SDK2.0协同
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sdk-v10-sdksdk20" class="md-nav__link">
+    ！！！ 目前SDk V1.0 停止维护，SDK对接请移步SDK2.0协同文档
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xcode-sdk" class="md-nav__link">
+    一、Xcode SDK 配置
+  </a>
+  
+    <nav class="md-nav" aria-label="一、Xcode SDK 配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#token" class="md-nav__link">
+    Token获取
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    拍照 回调 信息
+  </a>
+  
+    <nav class="md-nav" aria-label="拍照 回调 信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    传入 拍照字段说明
+  </a>
+  
+    <nav class="md-nav" aria-label="传入 拍照字段说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    回调 'AI' 图片信息字段说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local" class="md-nav__link">
+    回调 'local' 图片信息字段说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info" class="md-nav__link">
+    回调 'info' 信息字段说明 用于获取检测报告的请求
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    请求检测报告数据字段说明
+  </a>
+  
+    <nav class="md-nav" aria-label="请求检测报告数据字段说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    返回检测报告数据字段说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    AI检测项量化说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai_2" class="md-nav__link">
+    AI检测项描述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    返回
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    二、WEB端服务接口
+  </a>
+  
+    <nav class="md-nav" aria-label="二、WEB端服务接口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1.获取案例组相关图片
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2.获取案例组文案描述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3ai" class="md-nav__link">
+    3.获取AI检测结果
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4.数据解密算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/fuuqiu/metis/edit/master/docs/开发文档/移动端ios/02.SDK1.0协同.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="02sdk10">02.SDK1.0服务端接口</h1>
+<h4 id="sdk-v10-sdksdk20">！！！ 目前SDk V1.0 停止维护，SDK对接请移步SDK2.0协同文档</h4>
+<h2 id="xcode-sdk">一、Xcode SDK 配置</h2>
+<p>在上面步骤拿到 APPKey 后，App  需要首次调用 SDK时，需要进行参数化，建议 在App启动时进行：</p>
+<pre><code class="objective-c">#import &quot;MoreMeCammer.h&quot;
+
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    // Override point for customization after application launch.*
+    [MoreMeCammer startWithAppId:@&quot;NS6o9arh3o0l4h89d9nwn88p9c3202m5&quot;     skey:@&quot;yJ5SmJz119lvhv2n&quot; cipher:@&quot;6104A94E2E3041E62A3D0EB18AC5ADDAE8A83CA2FE3B7AEB649BAF75350D9ADD&quot;];
+    return  YES;
+
+}
+</code></pre>
+
+<h3 id="token">Token获取</h3>
+<table>
+<thead>
+<tr>
+<th>appid</th>
+<th>string</th>
+<th>App Id 来自物联网机构管理后台-&gt;开发配置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>skey</td>
+<td>string</td>
+<td>Skey 来自物联网机构管理后台-&gt;开发配置</td>
+</tr>
+<tr>
+<td>cipher</td>
+<td>string</td>
+<td>Cipher 来自物联网机构管理后台-&gt;开发配置</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">拍照 回调 信息</h3>
+<pre><code class="objective-c"> __weak typeof(&amp;*self) ws = self;
+
+    //顾客 ID  门店ID  必填，要和图片 、仪器绑定   顾客名字可以不填
+    MoreCameraVC *vc =[[MoreCameraVC alloc]initWithCustomerID:@&quot;8&quot; shopID:@&quot;12345&quot;  customerName:@&quot;sfd&quot;];
+
+    vc.saveBlock = ^(NSArray * _Nonnull images,NSDictionary *_Nonnull info) {//获取图片：拍照完成，点击完成的回调
+        @synchronized (ws.layout) {
+            [ws.layout removeAllObjects];
+            [ws.layout addObjectsFromArray:images];
+        }
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [ws.collectionView reloadData];
+        });
+
+    };
+    [self presentViewController:vc  animated:YES completion:nil];
+</code></pre>
+
+<h4 id="_2">传入 拍照字段说明</h4>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CustomerID</td>
+<td>string</td>
+<td>顾客 ID</td>
+</tr>
+<tr>
+<td>shopID</td>
+<td>string</td>
+<td>门店ID</td>
+</tr>
+<tr>
+<td>customerName</td>
+<td>string</td>
+<td>账户名称</td>
+</tr>
+</tbody>
+</table>
+<h5 id="ai">回调 'AI' 图片信息字段说明</h5>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>图片路径</td>
+</tr>
+<tr>
+<td>image</td>
+<td>string</td>
+<td>为空</td>
+</tr>
+<tr>
+<td>imageType</td>
+<td>string</td>
+<td>ai</td>
+</tr>
+<tr>
+<td>itype</td>
+<td>string</td>
+<td>图片的类型</td>
+</tr>
+</tbody>
+</table>
+<h5 id="local">回调 'local' 图片信息字段说明</h5>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>图片名称</td>
+</tr>
+<tr>
+<td>image</td>
+<td>UIImage</td>
+<td>UIImage</td>
+</tr>
+<tr>
+<td>imageType</td>
+<td>string</td>
+<td>local</td>
+</tr>
+<tr>
+<td>itype</td>
+<td>string</td>
+<td>图片的类型</td>
+</tr>
+</tbody>
+</table>
+<h5 id="info">回调 'info' 信息字段说明 用于获取检测报告的请求</h5>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>caseGroundID</td>
+<td>string</td>
+<td>当前图片案例组ID</td>
+</tr>
+<tr>
+<td>customerID</td>
+<td>string</td>
+<td>顾客ID</td>
+</tr>
+<tr>
+<td>shopID</td>
+<td>string</td>
+<td>门店ID</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>itype 值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>日光模式 -标准图</td>
+</tr>
+<tr>
+<td>1</td>
+<td>交叉偏正</td>
+</tr>
+<tr>
+<td>2</td>
+<td>平行光</td>
+</tr>
+<tr>
+<td>3</td>
+<td>UV图</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Woods图</td>
+</tr>
+<tr>
+<td>5</td>
+<td>生理老化图</td>
+</tr>
+<tr>
+<td>6</td>
+<td>敏感图</td>
+</tr>
+<tr>
+<td>7</td>
+<td>棕色图</td>
+</tr>
+<tr>
+<td>8</td>
+<td>坐标图</td>
+</tr>
+<tr>
+<td>9</td>
+<td>斑的趋势图</td>
+</tr>
+<tr>
+<td>10</td>
+<td>AI诊断图</td>
+</tr>
+<tr>
+<td>11</td>
+<td>毛孔图</td>
+</tr>
+<tr>
+<td>12</td>
+<td>斑点图</td>
+</tr>
+<tr>
+<td>13</td>
+<td>皱纹图</td>
+</tr>
+<tr>
+<td>14</td>
+<td>黑白图</td>
+</tr>
+<tr>
+<td>15</td>
+<td>黑头粉刺</td>
+</tr>
+</tbody>
+</table>
+<pre><code>/**
+ 拍照成功的回调
+
+ @param images 字典数组包含图片信息（name:图片url,image:原图，imageType:当前图片类型）图片类型：ai 需要服务器生成 、local 本地生成的直接用image  info拍照信息，用于请求检测报告
+ */
+typedef void(^imageBlock)(NSArray *images,NSDictionary *info);//成功的回调
+</code></pre>
+
+<h3 id="_3">请求检测报告数据字段说明</h3>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>caseGroundID</td>
+<td>string</td>
+<td>当前图片案例组ID</td>
+</tr>
+<tr>
+<td>customerID</td>
+<td>string</td>
+<td>顾客ID</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="objective-c">#import &quot;MoreOpenImage.h&quot;
+
+/**
+ 获取检测报告数据信息
+
+ @param param 请求参数
+
+ @param success 成功回调
+ */
++ (void)getImageInfoByPaht:(NSDictionary *)param process:(void(^)(NSDictionary *info))success;
+
+
+  [MoreOpenImage queryImageInfoByPaht:self.info process:^(NSDictionary * _Nonnull info) {
+                YYLog(@&quot;%@&quot;,info);
+            } failure:^(NSError * _Nonnull error) {
+                YYLog(@&quot;%@&quot;,error);
+            }];
+</code></pre>
+
+<h4 id="_4">返回检测报告数据字段说明</h4>
+<ul>
+<li>示例</li>
+</ul>
+<pre><code class="json">{
+    &quot;data&quot;: {
+        &quot;clientName&quot;: &quot;er&quot;, //用户名
+        &quot;sex&quot;: 0,   //性别 0女 1 男
+        &quot;createTime&quot;: 1566271175000,
+        &quot;totalScore&quot;: 95.80000, //量化综合得分 百分制
+        &quot;mask&quot;: [   //AI检测二类别量化预测数据
+            {
+                &quot;chance&quot;: 9166.0,
+                &quot;name&quot;: &quot;色素痣&quot;   //次检测项名
+            }
+        ],
+        &quot;predicted&quot;: [ 
+            {
+                &quot;name&quot;:&quot;色斑&quot;,            //主检测项名
+                &quot;predicted&quot;:96          //百分制
+            },
+            {
+                &quot;name&quot;:&quot;毛孔&quot;,
+                &quot;predicted&quot;:79.36854594482422
+            },
+            {
+                &quot;name&quot;:&quot;皱纹&quot;,
+                &quot;predicted&quot;:82.57682400000002
+            },
+            {
+                &quot;name&quot;:&quot;黑头&quot;,
+                &quot;predicted&quot;:80.917
+            },
+            {
+                &quot;name&quot;:&quot;敏感&quot;,
+                &quot;predicted&quot;:99
+            }
+        ],
+        &quot;avg&quot;: [    //全库AI检测一类别量化数据平均值 百分制
+            {
+                &quot;avg&quot;: 68,
+                &quot;name&quot;: &quot;色斑&quot;
+            },
+            {
+                &quot;avg&quot;: 76,
+                &quot;name&quot;: &quot;毛孔&quot;
+            },
+            {
+                &quot;avg&quot;: 65,
+                &quot;name&quot;: &quot;皱纹&quot;
+            },
+            {
+                &quot;avg&quot;: 43,
+                &quot;name&quot;: &quot;黑头&quot;
+            },
+            {
+                &quot;avg&quot;: 45,
+                &quot;name&quot;: &quot;敏感&quot;
+            }
+        ],
+        &quot;prop&quot;: [//  AI检测一类别量化数据占比
+            {
+                &quot;name&quot;: &quot;色斑&quot;,
+                &quot;prop&quot;: 4362.67
+            },
+            {
+                &quot;name&quot;: &quot;毛孔&quot;,
+                &quot;prop&quot;: 916.98
+            },
+            {
+                &quot;name&quot;: &quot;皱纹&quot;,
+                &quot;prop&quot;: 4712.15
+            },
+            {
+                &quot;name&quot;: &quot;黑头&quot;,
+                &quot;prop&quot;: 8.2
+            },
+            {
+                &quot;name&quot;: &quot;敏感&quot;,
+                &quot;prop&quot;: 0.0
+            }
+        ],
+        &quot;senseData&quot;: [ //AI检测一类别量化数据 (单位:像素面积)
+            {
+                &quot;name&quot;: &quot;色斑&quot;,
+                &quot;value&quot;: 83039
+            },
+            {
+                &quot;name&quot;: &quot;毛孔&quot;,
+                &quot;value&quot;: 364
+            },
+            {
+                &quot;name&quot;: &quot;皱纹&quot;,
+                &quot;value&quot;: 314
+            },
+            {
+                &quot;name&quot;: &quot;黑头&quot;,
+                &quot;value&quot;: 156
+            },
+            {
+                &quot;name&quot;: &quot;敏感&quot;,
+                &quot;value&quot;: 0
+            }
+        ]
+    },
+    &quot;sign&quot;: 1,
+    &quot;msg&quot;: &quot;请求成功&quot;,
+    &quot;code&quot;: 200
+}
+</code></pre>
+
+<h4 id="ai_1">AI检测项量化说明</h4>
+<ul>
+<li>
+<p>检测结果项类别说明:</p>
+</li>
+<li>
+<p>检测一类别(<strong>包含但不限于</strong>):</p>
+<table>
+<thead>
+<tr>
+<th>名称(中文)</th>
+<th>英文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>色斑</td>
+<td>stain</td>
+</tr>
+<tr>
+<td>毛孔</td>
+<td>pore</td>
+</tr>
+<tr>
+<td>皱纹</td>
+<td>wrinkle</td>
+</tr>
+<tr>
+<td>黑头</td>
+<td>blackhead</td>
+</tr>
+<tr>
+<td>敏感</td>
+<td>sensity</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>预测二类别(<strong>包含但不限于</strong>):</p>
+<table>
+<thead>
+<tr>
+<th>名称(中文)</th>
+<th>英文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>雀斑</td>
+<td>freckles</td>
+</tr>
+<tr>
+<td>老年斑</td>
+<td>Age spots</td>
+</tr>
+<tr>
+<td>晒斑</td>
+<td>sunburn</td>
+</tr>
+<tr>
+<td>黄褐斑</td>
+<td>chloasma</td>
+</tr>
+<tr>
+<td>褐青色痣</td>
+<td>Brown blue nevus</td>
+</tr>
+<tr>
+<td>炎症性色素沉着</td>
+<td>Inflammatory pigmentation</td>
+</tr>
+<tr>
+<td>太田痣</td>
+<td>Nevus of ota</td>
+</tr>
+<tr>
+<td>咖啡斑</td>
+<td>Coffee spot</td>
+</tr>
+<tr>
+<td>雀斑样痣</td>
+<td>lentigo simplex</td>
+</tr>
+<tr>
+<td>湿疹</td>
+<td>eczema</td>
+</tr>
+<tr>
+<td>特应性皮炎</td>
+<td>Atopic dermatitis</td>
+</tr>
+<tr>
+<td>接触性皮炎</td>
+<td>Contact dermatitis</td>
+</tr>
+<tr>
+<td>激素依赖性皮炎</td>
+<td>Hormone-dependent dermatitis</td>
+</tr>
+<tr>
+<td>口周皮炎</td>
+<td>perioral dermatitis</td>
+</tr>
+<tr>
+<td>单纯疱疹</td>
+<td>Herpes simplex</td>
+</tr>
+<tr>
+<td>带状疱疹</td>
+<td>Herpes zoster</td>
+</tr>
+<tr>
+<td>扁平疣</td>
+<td>Flat wart</td>
+</tr>
+<tr>
+<td>风疹</td>
+<td>rubella</td>
+</tr>
+<tr>
+<td>色素痣</td>
+<td>Pigmented nevus</td>
+</tr>
+<tr>
+<td>斑痣</td>
+<td>against</td>
+</tr>
+<tr>
+<td>脂溢性角化病</td>
+<td>Seborrheic keratosis</td>
+</tr>
+<tr>
+<td>汗管瘤</td>
+<td>Vulvar syringomas</td>
+</tr>
+<tr>
+<td>粟丘疹</td>
+<td>Millet pimples</td>
+</tr>
+<tr>
+<td>黑头粉刺</td>
+<td>blackheads</td>
+</tr>
+<tr>
+<td>白头粉刺</td>
+<td>whiteheads</td>
+</tr>
+<tr>
+<td>丘疹性痤疮</td>
+<td>Pimple acne</td>
+</tr>
+<tr>
+<td>硬结性痤疮</td>
+<td>Purulent acne</td>
+</tr>
+<tr>
+<td>囊肿性痤疮</td>
+<td>Hard acne</td>
+</tr>
+<tr>
+<td>敏感</td>
+<td>mingan</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="ai_2">AI检测项描述</h3>
+<p>请求</p>
+<pre><code class="objective-c">#import &quot;MoreOpenImage.h&quot;
+
+/**
+ 返回病症描述
+
+ @param language 语言版本  string
+(query) 
+语言 | * en - 英文 * zh - 中文 * ja - 日本 * tw - 繁体 * de - 德文
+ */
++ (void)queryAISkinDescriptionWithLanguage:(NSString *)language  info:(void(^)(NSDictionary *info))success failure:(void(^)(NSError *error))failed;
+
+
+   [MoreOpenImage  queryAISkinDescriptionWithLanguage:@&quot;tw&quot;  info:^(NSDictionary * _Nonnull info) {
+    NSLog(@&quot;%@&quot;,info);
+    } failure:^(NSError * _Nonnull error) {
+
+    }];
+
+
+
+</code></pre>
+
+<ul>
+<li>示例</li>
+</ul>
+<pre><code class="json">{
+    &quot;code&quot;:200,
+    &quot;data&quot;:[
+        {
+            &quot;id&quot;:422,
+            &quot;keystr&quot;:&quot;skin_violet&quot;,
+            &quot;keyvalue&quot;:&quot;护理：建议做好皮肤的清洁&quot;
+        },
+        ......
+    ],
+    &quot;msg&quot;:&quot;请求成功&quot;,
+    &quot;sign&quot;:1
+}
+</code></pre>
+
+<h3 id="_5">返回</h3>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>整形</td>
+<td>AI检测量化数据项 ID</td>
+</tr>
+<tr>
+<td>keyvalue</td>
+<td>字符串</td>
+<td>文字说明</td>
+</tr>
+<tr>
+<td>keystr</td>
+<td>字符串</td>
+<td>AI检测量化数据项描述  值描述如下</td>
+</tr>
+</tbody>
+</table>
+<p>AI检测量化<strong>包含但不限于</strong>以下数据项</p>
+<table>
+<thead>
+<tr>
+<th align="left">keystr值</th>
+<th>对应   itype</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">skin_violet</td>
+<td>3</td>
+<td>紫质</td>
+</tr>
+<tr>
+<td align="left">skin_spots</td>
+<td>12</td>
+<td>色斑</td>
+</tr>
+<tr>
+<td align="left">skin_acne</td>
+<td>4</td>
+<td>黑头</td>
+</tr>
+<tr>
+<td align="left">skin_pore</td>
+<td>11</td>
+<td>毛孔</td>
+</tr>
+<tr>
+<td align="left">skin_wrinkle</td>
+<td>13</td>
+<td>皱纹</td>
+</tr>
+<tr>
+<td align="left">skin_sensitive</td>
+<td>6</td>
+<td>皮肤敏感组图</td>
+</tr>
+<tr>
+<td align="left">skin_desc</td>
+<td>10</td>
+<td>皮肤标准 &amp; AI组图</td>
+</tr>
+</tbody>
+</table>
+<h2 id="web">二、WEB端服务接口</h2>
+<h3 id="1">1.获取案例组相关图片</h3>
+<pre><code class="http">POST /caseGroups/findImages?cgid=392744 HTTP/1.1
+Host: http://metisapi.hoyar.com.cn
+access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzI2MTU3MDAsImp0aSI6IjE2MDgifQ.Xd8hYCc8iPYQu7XLWiyUsg3ngzXgFgbv2O7xzuKrtxx
+Request Body:
+{ 
+}
+Response Code:200
+Response Body:
+{
+    &quot;data&quot;: &quot;BD62AC3BFD1B04165BA7D4ED&quot;,
+    &quot;sign&quot;: 1,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;code&quot;: 200
+}
+
+</code></pre>
+
+<ul>
+<li>Response Body Code == 200 请求成功进行数据解密</li>
+</ul>
+<pre><code class="json">[
+    {
+        &quot;cgid&quot;:392744,
+        &quot;imgurl&quot;:&quot;https://djm-skin.oss-cn-shenzhen.aliyuncs.com/Picture/1608/239486/392744/0.jpg&quot;,
+        &quot;itype&quot;:0,
+        &quot;createtime&quot;:&quot;Aug 2, 2019 11:02:01 AM&quot;,
+        &quot;id&quot;:4925758
+    },
+    {
+        &quot;cgid&quot;:392744,
+        &quot;imgurl&quot;:&quot;https://djm-skin.oss-cn-shenzhen.aliyuncs.com/Picture/1608/23xx86/39xx44/1.jpg&quot;,
+        &quot;itype&quot;:1,
+        &quot;createtime&quot;:&quot;Aug 2, 2019 11:02:01 AM&quot;,
+        &quot;id&quot;:4925759
+    },
+    {
+        &quot;cgid&quot;:392744,
+        &quot;imgurl&quot;:&quot;https://djm-skin.oss-cn-shenzhen.aliyuncs.com/Picture/1608/23xx86/39xx44/2.jpg&quot;,
+        &quot;itype&quot;:2,
+        &quot;createtime&quot;:&quot;Aug 2, 2019 11:02:01 AM&quot;,
+        &quot;id&quot;:4925760
+    },
+    {
+        &quot;cgid&quot;:392744,
+        &quot;imgurl&quot;:&quot;https://djm-skin.oss-cn-shenzhen.aliyuncs.com/Picture/1608/23xx86/39xx44/3.jpg&quot;,
+        &quot;itype&quot;:3,
+        &quot;createtime&quot;:&quot;Aug 2, 2019 11:02:01 AM&quot;,
+        &quot;id&quot;:4925761
+    },
+    {
+        &quot;cgid&quot;:392744,
+        &quot;imgurl&quot;:&quot;https://djm-skin.oss-cn-shenzhen.aliyuncs.com/Picture/1608/23xx86/39xx44/4.jpg&quot;,
+        &quot;itype&quot;:4,
+        &quot;createtime&quot;:&quot;Aug 2, 2019 11:02:01 AM&quot;,
+        &quot;id&quot;:4925762
+    },
+    {
+        &quot;cgid&quot;:392744,
+        &quot;imgurl&quot;:&quot;https://djm-skin.oss-cn-shenzhen.aliyuncs.com/Picture/1608/23xx86/39xx44/5.jpg&quot;,
+        &quot;itype&quot;:5,
+        &quot;createtime&quot;:&quot;Aug 2, 2019 11:02:01 AM&quot;,
+        &quot;id&quot;:4925763
+    }
+]
+</code></pre>
+
+<p>AI检测量化<strong>包含但不限于</strong>以下数据项</p>
+<table>
+<thead>
+<tr>
+<th align="left">字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">id</td>
+<td>Long</td>
+<td>ID</td>
+</tr>
+<tr>
+<td align="left">cgid</td>
+<td>Long</td>
+<td>案例组ID</td>
+</tr>
+<tr>
+<td align="left">imgurl</td>
+<td>12</td>
+<td>图片地url</td>
+</tr>
+<tr>
+<td align="left">itype</td>
+<td>Integer</td>
+<td>类型</td>
+</tr>
+<tr>
+<td align="left">createtime</td>
+<td>Date</td>
+<td>创建时间</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2">2.获取案例组文案描述</h3>
+<pre><code class="http">POST /report/findSkinDesc?language=tw&amp;cgid=392744 HTTP/1.1
+Host: http://metisapi.hoyar.com.cn
+access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzI2MTU3MDAsImp0aSI6IjE2MDgifQ.Xd8hYCc8iPYQu7XLWiyUsg3ngzXgFgbv2O7xzuKrtxx
+Request Body:
+{ 
+}
+Response Code:200
+Response Body:
+{
+    &quot;data&quot;: &quot;BD62AC3BFD1B04165BA7D4ED&quot;,
+    &quot;sign&quot;: 1,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;code&quot;: 200
+}
+</code></pre>
+
+<ul>
+<li>Response Body Code == 200 请求成功进行数据解密</li>
+</ul>
+<pre><code class="json">[
+    {
+        &quot;keystr&quot;:&quot;skin_violet&quot;,
+        &quot;keyvalue&quot;:&quot;护理：建议做好皮肤的清洁，选择适合自己的护肤用品，切不可贪图既便宜又速效的护肤产品&quot;,
+        &quot;id&quot;:422
+    },
+    {
+        &quot;keystr&quot;:&quot;skin_spots&quot;,
+        &quot;keyvalue&quot;:&quot;护理：建议家居加强防晒、保湿，多食用含维生素C、E的新鲜食物或水果，多喝水，白天尽量少食光敏性食物（芹菜、香菜、菠菜、油菜、香菇、柠檬、菠萝等）。选择适合的美白项目，规律生活，多注意睡眠质量&quot;,
+        &quot;id&quot;:423
+    },
+    {
+        &quot;keystr&quot;:&quot;skin_acne&quot;,
+        &quot;keyvalue&quot;:&quot;护理：做好深度清洁，避免过度清洁，少用手去挤或用针去挑，加强防晒。饮食尽量清淡，避免高糖、高脂、油炸食品，可适当补充A族、B族维生素，少熬夜、规律生活&quot;,
+        &quot;id&quot;:424
+    },
+    {
+        &quot;keystr&quot;:&quot;skin_pore&quot;,
+        &quot;keyvalue&quot;:&quot;护理：建议做好深度清洁，避免过度清洁，尽可能不用手去挤或用针去挑痘、粉刺，尽量减少遮瑕类产品的使用，加强防晒。饮食清淡，避免高糖、高脂、油炸食品，可适当补充B族维生素，少熬夜、规律生活&quot;,
+        &quot;id&quot;:425
+    },
+    {
+        &quot;keystr&quot;:&quot;skin_wrinkle&quot;,
+        &quot;keyvalue&quot;:&quot;描述：皮肤干燥、表面凹凸不光滑，干纹、细纹、静态纹明显，肤色晦暗无光泽、曝光部位易出现色素沉着
+护理：建议加强防晒，禁用去脂性强的洁面用品，平时做好补水保湿。及时选择适合的抗衰项目&quot;,
+        &quot;id&quot;:426
+    },
+    {
+        &quot;keystr&quot;:&quot;skin_sensitive&quot;,
+        &quot;keyvalue&quot;:&quot;描述：敏感图可见大小各异的圆形、局限的出血点
+护理：建议做好局部的清洁，不可过热刺激，不可用手去挤压或用针去挑，及时抗炎、抗感染治疗&quot;,
+        &quot;id&quot;:427
+    },
+    {
+        &quot;keystr&quot;:&quot;skin_desc&quot;,
+        &quot;keyvalue&quot;:&quot; 日光图-肉眼看到的情况                      极化图-皮肤表皮下的真实情况
+ 平行光-皮肤表面的真实情况              AI图-人工智能AI识别出的病症&quot;,
+        &quot;id&quot;:428
+    }
+]
+</code></pre>
+
+<p>AI检测量化<strong>包含但不限于</strong>以下数据项</p>
+<table>
+<thead>
+<tr>
+<th align="left">keystr值</th>
+<th>对应   itype</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">skin_violet</td>
+<td>3</td>
+<td>紫质</td>
+</tr>
+<tr>
+<td align="left">skin_spots</td>
+<td>12</td>
+<td>色斑</td>
+</tr>
+<tr>
+<td align="left">skin_acne</td>
+<td>4</td>
+<td>黑头</td>
+</tr>
+<tr>
+<td align="left">skin_pore</td>
+<td>11</td>
+<td>毛孔</td>
+</tr>
+<tr>
+<td align="left">skin_wrinkle</td>
+<td>13</td>
+<td>皱纹</td>
+</tr>
+<tr>
+<td align="left">skin_sensitive</td>
+<td>6</td>
+<td>皮肤敏感组图</td>
+</tr>
+<tr>
+<td align="left">skin_desc</td>
+<td>10</td>
+<td>皮肤标准 &amp; AI组图</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3ai">3.获取AI检测结果</h3>
+<pre><code class="http">POST /report/sdkAiDiagnosisReport?language=tw&amp;cgid=392744&amp;cid=123456 HTTP/1.1
+Host: http://metisapi.hoyar.com.cn
+access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzI2MTU3MDAsImp0aSI6IjE2MDgifQ.Xd8hYCc8iPYQu7XLWiyUsg3ngzXgFgbv2O7xzuKrtxx
+Request Body:
+{ 
+}
+Response Code:200
+Response Body:
+{
+    &quot;data&quot;: &quot;BD62AC3BFD1B04165BA7D4ED&quot;,
+    &quot;sign&quot;: 1,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;code&quot;: 200
+}
+</code></pre>
+
+<ul>
+<li>Response Body Code == 200 请求成功进行数据解密</li>
+</ul>
+<pre><code class="json">{
+    &quot;clientName&quot;:&quot;8&quot;,
+    &quot;sex&quot;:0,
+    &quot;totalScore&quot;:77.34611377389831,
+    &quot;mask&quot;:[
+        {
+            &quot;chance&quot;:9495,
+            &quot;name&quot;:&quot;黑头粉刺&quot;,
+            &quot;id&quot;:34
+        },
+        {
+            &quot;chance&quot;:9422,
+            &quot;name&quot;:&quot;炎症性色素沉着&quot;,
+            &quot;id&quot;:16
+        },
+        {
+            &quot;chance&quot;:7981,
+            &quot;name&quot;:&quot;色素痣&quot;,
+            &quot;id&quot;:29
+        }
+    ],
+    &quot;predicted&quot;:[
+        {
+            &quot;name&quot;:&quot;色斑&quot;,
+            &quot;predicted&quot;:64.96533105
+        },
+        {
+            &quot;name&quot;:&quot;毛孔&quot;,
+            &quot;predicted&quot;:92.60546804559327
+        },
+        {
+            &quot;name&quot;:&quot;皱纹&quot;,
+            &quot;predicted&quot;:55.81365600000001
+        },
+        {
+            &quot;name&quot;:&quot;黑头&quot;,
+            &quot;predicted&quot;:96
+        },
+        {
+            &quot;name&quot;:&quot;敏感&quot;,
+            &quot;predicted&quot;:99
+        }
+    ],
+    &quot;avg&quot;:[
+        {
+            &quot;name&quot;:&quot;色斑&quot;,
+            &quot;avg&quot;:61
+        },
+        {
+            &quot;name&quot;:&quot;毛孔&quot;,
+            &quot;avg&quot;:94
+        },
+        {
+            &quot;name&quot;:&quot;皱纹&quot;,
+            &quot;avg&quot;:49
+        },
+        {
+            &quot;name&quot;:&quot;黑头&quot;,
+            &quot;avg&quot;:98
+        },
+        {
+            &quot;name&quot;:&quot;敏感&quot;,
+            &quot;avg&quot;:99
+        }
+    ],
+    &quot;prop&quot;:[  //基础元数据占比 小数位左移两位百分比
+        {
+            &quot;name&quot;:&quot;色斑&quot;,
+            &quot;prop&quot;:4279.43
+        },
+        {
+            &quot;name&quot;:&quot;毛孔&quot;,
+            &quot;prop&quot;:1010.84
+        },
+        {
+            &quot;name&quot;:&quot;皱纹&quot;,
+            &quot;prop&quot;:4708.48
+        },
+        {
+            &quot;name&quot;:&quot;黑头&quot;,
+            &quot;prop&quot;:1.25
+        },
+        {
+            &quot;name&quot;:&quot;敏感&quot;,
+            &quot;prop&quot;:0
+        }
+    ],
+    &quot;senseData&quot;:[ 
+        {
+            &quot;name&quot;:&quot;色斑&quot;,
+            &quot;value&quot;:233725
+        },
+        {
+            &quot;name&quot;:&quot;毛孔&quot;,
+            &quot;value&quot;:341
+        },
+        {
+            &quot;name&quot;:&quot;皱纹&quot;,
+            &quot;value&quot;:442
+        },
+        {
+            &quot;name&quot;:&quot;黑头&quot;,
+            &quot;value&quot;:68
+        },
+        {
+            &quot;name&quot;:&quot;敏感&quot;,
+            &quot;value&quot;:0
+        }
+    ],
+    &quot;cardinal&quot;:[     //基础元数据
+        {
+            &quot;name&quot;:&quot;色斑&quot;,
+            &quot;value&quot;:1293
+        },
+        {
+            &quot;name&quot;:&quot;毛孔&quot;,
+            &quot;value&quot;:341
+        },
+        {
+            &quot;name&quot;:&quot;皱纹&quot;,
+            &quot;value&quot;:442
+        },
+        {
+            &quot;name&quot;:&quot;黑头&quot;,
+            &quot;value&quot;:17
+        },
+        {
+            &quot;name&quot;:&quot;敏感&quot;,
+            &quot;value&quot;:0
+        }
+    ]
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>主要字段</th>
+<th>示意</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mask</td>
+<td>检测二类别</td>
+</tr>
+<tr>
+<td>predicted</td>
+<td>检测维度得分</td>
+</tr>
+<tr>
+<td>avg</td>
+<td>全国排行占比</td>
+</tr>
+<tr>
+<td>prop</td>
+<td>维度基础元数据占比(小数点左移两位百分制)</td>
+</tr>
+<tr>
+<td>senseData</td>
+<td>计分元数据</td>
+</tr>
+<tr>
+<td>cardinal</td>
+<td>维度基础元数据</td>
+</tr>
+</tbody>
+</table>
+<p>!!  cardinal 维度:敏感数据呈现处理</p>
+<pre><code class="objective-c">#示例
+if (sensityareaNum &lt; 8000) {
+   sensityareaStr = kMultiLangString(@&quot;无&quot;);
+}
+if (sensityareaNum &gt;= 8000 &amp;&amp; sensityareaNum &lt; 150000 ) {
+   sensityareaStr = kMultiLangString(@&quot;轻度&quot;);
+}
+if (sensityareaNum &gt;= 150000 &amp;&amp; sensityareaNum &lt; 500000 ) {
+    sensityareaStr = kMultiLangString(@&quot;中度&quot;);
+  }
+if (sensityareaNum &gt;= 500000) {
+    sensityareaStr = kMultiLangString(@&quot;重度&quot;);
+} 
+</code></pre>
+
+<h3 id="4">4.数据解密算法</h3>
+<pre><code class="java">public class SecureRandomUtils {  
+    /**
+     * 解密
+     *
+     * @param sSrc 密文
+     * @param sKey 秘钥 16位字符串
+     * @return 解密后数据字符
+     * @throws Exception
+     */
+    public static String Decrypt(String sSrc, String sKey) throws Exception {
+        try {
+            // 判断Key是否正确
+            if (sKey == null) {
+                System.out.print(&quot;Key为空null&quot;);
+                return null;
+            }
+            // 判断Key是否为16位
+            if (sKey.length() != 16) {
+                System.out.print(&quot;Key长度不是16位&quot;);
+                return null;
+            }
+            byte[] raw = sKey.getBytes(&quot;utf-8&quot;);
+            SecretKeySpec skeySpec = new SecretKeySpec(raw, &quot;AES&quot;);
+            Cipher cipher = Cipher.getInstance(&quot;AES/ECB/PKCS5Padding&quot;);
+            cipher.init(Cipher.DECRYPT_MODE, skeySpec);
+            byte[] encrypted1 = toByte(sSrc);//
+            try {
+                byte[] original = cipher.doFinal(encrypted1);
+                String originalString = new String(original, &quot;utf-8&quot;);
+                return originalString;
+            } catch (Exception e) {
+                System.out.println(e.toString());
+                return null;
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
+            return null;
+        }
+    }
+
+    private static byte[] toByte(String hexString) {
+        int len = hexString.length() / 2;
+        byte[] result = new byte[len];
+        for (int i = 0; i &lt; len; i++)
+            result[i] = Integer.valueOf(hexString.substring(2 * i, 2 * i + 2), 16).byteValue();
+        return result;
+    }
+
+    private static String toHex(String txt) {
+        return toHex(txt.getBytes());
+    }
+
+    private static String toHex(byte[] buf) {
+        if (buf == null)
+            return &quot;&quot;;
+        StringBuffer result = new StringBuffer(2 * buf.length);
+        for (int i = 0; i &lt; buf.length; i++) {
+            appendHex(result, buf[i]);
+        }
+        return result.toString();
+    }
+
+    private final static String HEX = &quot;0123456789ABCDEF&quot;;
+
+    private static void appendHex(StringBuffer sb, byte b) {
+        sb.append(HEX.charAt((b &gt;&gt; 4) &amp; 0x0f)).append(HEX.charAt(b &amp; 0x0f));
+    }
+
+  public static final String ALLCHAR =      &quot;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+
+    public static void main(String[] args) throws Exception { 
+        // 解密
+        String DeString = SecureRandomUtils.Decrypt(&quot;BB81C1CB164B3 &quot;,&quot;xxxOm3gdIBKdaaIY&quot;);
+        System.out.println(&quot;解密后的字串：&quot; + DeString); 
+    } 
+}
+
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../01.%E6%8E%88%E6%9D%83%E9%85%8D%E7%BD%AE/" title="01.授权配置" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                01.授权配置
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../03.App%E5%94%A4%E8%B5%B7%E6%A8%A1%E5%BC%8F/" title="03.App唤起模式" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                03.App唤起模式
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Email:Fuuqiu@163.com </br> 支持提供优化方案
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
